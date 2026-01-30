@@ -1,0 +1,680 @@
+<meta charset="utf-8" />
+
+<style>
+    /* New Layout Styles */
+    .flex-container {
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* gap: 20px; */
+        width: 1200px;
+    }
+
+    .flex-item {
+        flex: 1;
+        /*max-width: 300px;*/
+        min-width: 0;
+    }
+
+    /* Original Styles */
+    .table-container {
+        /* max-height: 80vh; */
+        /* overflow-y: auto; */
+        /*position: relative;*/
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead th {
+        position: -webkit-sticky;
+        /* for Safari */
+        position: sticky;
+        top: 0;
+        background-color: #f2f2f2;
+        z-index: 1;
+    }
+
+    td,
+    th {
+        font-family: monospace;
+        font-size: 14px;
+        text-align: right;
+        vertical-align: top;
+        padding: 4px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<div class="flex-item">
+    <h1>Stocks</h1>
+    <div class="table-container">
+        <table border="1" style=" width: auto;">
+            <thead>
+                <tr style="text-align: right;">
+                    <th>stockName</th>
+                    <th>stockId</th>
+                    <th>pb1</th>
+                    <th>pb1Days</th>
+                    <th>brkDate</th>
+                    <th>brkDays</th>
+                    <th>natr20</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >欣興</td>
+                    <td >3037.TW</td>
+                    <td >1.36</td>
+                    <td >15</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td >4.36</td>
+                </tr>
+                <tr>
+                    <td >全訊</td>
+                    <td >5222.TW</td>
+                    <td >0.36</td>
+                    <td >0</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >3.8</td>
+                </tr>
+                <tr>
+                    <td >玉山金</td>
+                    <td >2884.TW</td>
+                    <td >0.77</td>
+                    <td >0</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >1.61</td>
+                </tr>
+                <tr>
+                    <td >南亞科</td>
+                    <td >2408.TW</td>
+                    <td style="background-color: #e57373;">1.67</td>
+                    <td >7</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td style="background-color: #e57373;">5.19</td>
+                </tr>
+                <tr>
+                    <td >漢磊</td>
+                    <td >3707.TWO</td>
+                    <td >0.51</td>
+                    <td >0</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td style="background-color: #e57373;">5.44</td>
+                </tr>
+                <tr>
+                    <td >穩懋</td>
+                    <td >3105.TWO</td>
+                    <td >0.86</td>
+                    <td >0</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td style="background-color: #e57373;">5.83</td>
+                </tr>
+                <tr>
+                    <td >聯發科</td>
+                    <td >2454.TW</td>
+                    <td >1.27</td>
+                    <td >6</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >2.92</td>
+                </tr>
+                <tr>
+                    <td >統一</td>
+                    <td >1216.TW</td>
+                    <td >-0.55</td>
+                    <td >11</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >1.67</td>
+                </tr>
+                <tr>
+                    <td >台新金</td>
+                    <td >2887.TW</td>
+                    <td >0.98</td>
+                    <td >0</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >2.12</td>
+                </tr>
+                <tr>
+                    <td >達明</td>
+                    <td >4585.TW</td>
+                    <td >1.32</td>
+                    <td >5</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >4.3</td>
+                </tr>
+                <tr>
+                    <td >鴻海</td>
+                    <td >2317.TW</td>
+                    <td >-0.19</td>
+                    <td >1</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >2.49</td>
+                </tr>
+                <tr>
+                    <td >卜蜂</td>
+                    <td >1215.TW</td>
+                    <td >0.63</td>
+                    <td >0</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >2.76</td>
+                </tr>
+                <tr>
+                    <td >兆豐金</td>
+                    <td >2886.TW</td>
+                    <td >-0.66</td>
+                    <td >9</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >1.25</td>
+                </tr>
+                <tr>
+                    <td >元大金</td>
+                    <td >2885.TW</td>
+                    <td >1.31</td>
+                    <td >5</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td >1.76</td>
+                </tr>
+                <tr>
+                    <td >元大台灣50</td>
+                    <td >0050.TW</td>
+                    <td >0.78</td>
+                    <td >0</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >1.32</td>
+                </tr>
+                <tr>
+                    <td >國泰智能電動車</td>
+                    <td >00893.TW</td>
+                    <td >1.07</td>
+                    <td >7</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >1.04</td>
+                </tr>
+                <tr>
+                    <td >統一FANG+</td>
+                    <td >00757.TW</td>
+                    <td >-0.03</td>
+                    <td >1</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >1.15</td>
+                </tr>
+                <tr>
+                    <td >富邦越南</td>
+                    <td >00885.TW</td>
+                    <td >0.03</td>
+                    <td >0</td>
+                    <td >2026-01-27</td>
+                    <td >3</td>
+                    <td >1.82</td>
+                </tr>
+                <tr>
+                    <td >中信日本商社</td>
+                    <td >00955.TWO</td>
+                    <td >0.83</td>
+                    <td >0</td>
+                    <td >2026-01-29</td>
+                    <td >1</td>
+                    <td >1.17</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="flex-container">
+    <div class="flex-item">
+        <h1>Rank of >=U1</h1>
+        <div class="table-container">
+            <table border="1" style=" width: auto;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>pb1</th>
+                        <th>pb1Days</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >南亞科</td>
+                        <td >2408.TW</td>
+                        <td style="background-color: #e57373;">1.67</td>
+                        <td >7</td>
+                    </tr>
+                    <tr>
+                        <td >欣興</td>
+                        <td >3037.TW</td>
+                        <td >1.36</td>
+                        <td >15</td>
+                    </tr>
+                    <tr>
+                        <td >達明</td>
+                        <td >4585.TW</td>
+                        <td >1.32</td>
+                        <td >5</td>
+                    </tr>
+                    <tr>
+                        <td >元大金</td>
+                        <td >2885.TW</td>
+                        <td >1.31</td>
+                        <td >5</td>
+                    </tr>
+                    <tr>
+                        <td >聯發科</td>
+                        <td >2454.TW</td>
+                        <td >1.27</td>
+                        <td >6</td>
+                    </tr>
+                    <tr>
+                        <td >國泰智能電動車</td>
+                        <td >00893.TW</td>
+                        <td >1.07</td>
+                        <td >7</td>
+                    </tr>
+                    <tr>
+                        <td >台新金</td>
+                        <td >2887.TW</td>
+                        <td >0.98</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >穩懋</td>
+                        <td >3105.TWO</td>
+                        <td >0.86</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >中信日本商社</td>
+                        <td >00955.TWO</td>
+                        <td >0.83</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >元大台灣50</td>
+                        <td >0050.TW</td>
+                        <td >0.78</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >玉山金</td>
+                        <td >2884.TW</td>
+                        <td >0.77</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >卜蜂</td>
+                        <td >1215.TW</td>
+                        <td >0.63</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >漢磊</td>
+                        <td >3707.TWO</td>
+                        <td >0.51</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >全訊</td>
+                        <td >5222.TW</td>
+                        <td >0.36</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >富邦越南</td>
+                        <td >00885.TW</td>
+                        <td >0.03</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td >統一FANG+</td>
+                        <td >00757.TW</td>
+                        <td >-0.03</td>
+                        <td >1</td>
+                    </tr>
+                    <tr>
+                        <td >鴻海</td>
+                        <td >2317.TW</td>
+                        <td >-0.19</td>
+                        <td >1</td>
+                    </tr>
+                    <tr>
+                        <td >統一</td>
+                        <td >1216.TW</td>
+                        <td >-0.55</td>
+                        <td >11</td>
+                    </tr>
+                    <tr>
+                        <td >兆豐金</td>
+                        <td >2886.TW</td>
+                        <td >-0.66</td>
+                        <td >9</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <h1>Rank of NATR 20</h1>
+        <div class="table-container">
+            <table border="1" style=" width: auto;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>natr20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >穩懋</td>
+                        <td >3105.TWO</td>
+                        <td style="background-color: #e57373;">5.83</td>
+                    </tr>
+                    <tr>
+                        <td >漢磊</td>
+                        <td >3707.TWO</td>
+                        <td style="background-color: #e57373;">5.44</td>
+                    </tr>
+                    <tr>
+                        <td >南亞科</td>
+                        <td >2408.TW</td>
+                        <td style="background-color: #e57373;">5.19</td>
+                    </tr>
+                    <tr>
+                        <td >欣興</td>
+                        <td >3037.TW</td>
+                        <td >4.36</td>
+                    </tr>
+                    <tr>
+                        <td >達明</td>
+                        <td >4585.TW</td>
+                        <td >4.3</td>
+                    </tr>
+                    <tr>
+                        <td >全訊</td>
+                        <td >5222.TW</td>
+                        <td >3.8</td>
+                    </tr>
+                    <tr>
+                        <td >聯發科</td>
+                        <td >2454.TW</td>
+                        <td >2.92</td>
+                    </tr>
+                    <tr>
+                        <td >卜蜂</td>
+                        <td >1215.TW</td>
+                        <td >2.76</td>
+                    </tr>
+                    <tr>
+                        <td >鴻海</td>
+                        <td >2317.TW</td>
+                        <td >2.49</td>
+                    </tr>
+                    <tr>
+                        <td >台新金</td>
+                        <td >2887.TW</td>
+                        <td >2.12</td>
+                    </tr>
+                    <tr>
+                        <td >富邦越南</td>
+                        <td >00885.TW</td>
+                        <td >1.82</td>
+                    </tr>
+                    <tr>
+                        <td >元大金</td>
+                        <td >2885.TW</td>
+                        <td >1.76</td>
+                    </tr>
+                    <tr>
+                        <td >統一</td>
+                        <td >1216.TW</td>
+                        <td >1.67</td>
+                    </tr>
+                    <tr>
+                        <td >玉山金</td>
+                        <td >2884.TW</td>
+                        <td >1.61</td>
+                    </tr>
+                    <tr>
+                        <td >元大台灣50</td>
+                        <td >0050.TW</td>
+                        <td >1.32</td>
+                    </tr>
+                    <tr>
+                        <td >兆豐金</td>
+                        <td >2886.TW</td>
+                        <td >1.25</td>
+                    </tr>
+                    <tr>
+                        <td >中信日本商社</td>
+                        <td >00955.TWO</td>
+                        <td >1.17</td>
+                    </tr>
+                    <tr>
+                        <td >統一FANG+</td>
+                        <td >00757.TW</td>
+                        <td >1.15</td>
+                    </tr>
+                    <tr>
+                        <td >國泰智能電動車</td>
+                        <td >00893.TW</td>
+                        <td >1.04</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <h1>Rank of Breakout Days</h1>
+        <div class="table-container">
+            <table border="1" style=" width: 550px;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>brkDate</th>
+                        <th>brkDays</th>
+                        <th>pb1</th>
+                        <th>pb1Days</th>
+                        <th>natr20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >欣興</td>
+                        <td >3037.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td >1.36</td>
+                        <td >15</td>
+                        <td >4.36</td>
+                    </tr>
+                    <tr>
+                        <td >南亞科</td>
+                        <td >2408.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td style="background-color: #e57373;">1.67</td>
+                        <td >7</td>
+                        <td style="background-color: #e57373;">5.19</td>
+                    </tr>
+                    <tr>
+                        <td >元大金</td>
+                        <td >2885.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td >1.31</td>
+                        <td >5</td>
+                        <td >1.76</td>
+                    </tr>
+                    <tr>
+                        <td >富邦越南</td>
+                        <td >00885.TW</td>
+                        <td >2026-01-27</td>
+                        <td >3</td>
+                        <td >0.03</td>
+                        <td >0</td>
+                        <td >1.82</td>
+                    </tr>
+                    <tr>
+                        <td >全訊</td>
+                        <td >5222.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >0.36</td>
+                        <td >0</td>
+                        <td >3.8</td>
+                    </tr>
+                    <tr>
+                        <td >玉山金</td>
+                        <td >2884.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >0.77</td>
+                        <td >0</td>
+                        <td >1.61</td>
+                    </tr>
+                    <tr>
+                        <td >漢磊</td>
+                        <td >3707.TWO</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >0.51</td>
+                        <td >0</td>
+                        <td style="background-color: #e57373;">5.44</td>
+                    </tr>
+                    <tr>
+                        <td >穩懋</td>
+                        <td >3105.TWO</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >0.86</td>
+                        <td >0</td>
+                        <td style="background-color: #e57373;">5.83</td>
+                    </tr>
+                    <tr>
+                        <td >聯發科</td>
+                        <td >2454.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >1.27</td>
+                        <td >6</td>
+                        <td >2.92</td>
+                    </tr>
+                    <tr>
+                        <td >統一</td>
+                        <td >1216.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >-0.55</td>
+                        <td >11</td>
+                        <td >1.67</td>
+                    </tr>
+                    <tr>
+                        <td >台新金</td>
+                        <td >2887.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >0.98</td>
+                        <td >0</td>
+                        <td >2.12</td>
+                    </tr>
+                    <tr>
+                        <td >達明</td>
+                        <td >4585.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >1.32</td>
+                        <td >5</td>
+                        <td >4.3</td>
+                    </tr>
+                    <tr>
+                        <td >鴻海</td>
+                        <td >2317.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >-0.19</td>
+                        <td >1</td>
+                        <td >2.49</td>
+                    </tr>
+                    <tr>
+                        <td >卜蜂</td>
+                        <td >1215.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >0.63</td>
+                        <td >0</td>
+                        <td >2.76</td>
+                    </tr>
+                    <tr>
+                        <td >兆豐金</td>
+                        <td >2886.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >-0.66</td>
+                        <td >9</td>
+                        <td >1.25</td>
+                    </tr>
+                    <tr>
+                        <td >元大台灣50</td>
+                        <td >0050.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >0.78</td>
+                        <td >0</td>
+                        <td >1.32</td>
+                    </tr>
+                    <tr>
+                        <td >國泰智能電動車</td>
+                        <td >00893.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >1.07</td>
+                        <td >7</td>
+                        <td >1.04</td>
+                    </tr>
+                    <tr>
+                        <td >統一FANG+</td>
+                        <td >00757.TW</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >-0.03</td>
+                        <td >1</td>
+                        <td >1.15</td>
+                    </tr>
+                    <tr>
+                        <td >中信日本商社</td>
+                        <td >00955.TWO</td>
+                        <td >2026-01-29</td>
+                        <td >1</td>
+                        <td >0.83</td>
+                        <td >0</td>
+                        <td >1.17</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
