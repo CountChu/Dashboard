@@ -1,0 +1,767 @@
+<meta charset="utf-8" />
+
+<style>
+    /* New Layout Styles */
+    .flex-container {
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* gap: 20px; */
+        width: 1200px;
+    }
+
+    .flex-item {
+        flex: 1;
+        /*max-width: 300px;*/
+        min-width: 0;
+    }
+
+    /* Original Styles */
+    .table-container {
+        /* max-height: 80vh; */
+        /* overflow-y: auto; */
+        /*position: relative;*/
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead th {
+        position: -webkit-sticky;
+        /* for Safari */
+        position: sticky;
+        top: 0;
+        background-color: #f2f2f2;
+        z-index: 1;
+    }
+
+    td,
+    th {
+        font-family: monospace;
+        font-size: 14px;
+        text-align: right;
+        vertical-align: top;
+        padding: 4px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<div class="flex-item">
+    <h1>Stocks</h1>
+    <div class="table-container">
+        <table border="1" style=" width: auto;">
+            <thead>
+                <tr style="text-align: right;">
+                    <th>stockName</th>
+                    <th>stockId</th>
+                    <th>pb1</th>
+                    <th>pb1Days</th>
+                    <th>brkDate</th>
+                    <th>brkDays</th>
+                    <th>natr20</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#8069.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元太</a></td>
+                    <td >8069.TWO</td>
+                    <td >1.08</td>
+                    <td >6</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td >3.38</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1795.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">美時</a></td>
+                    <td >1795.TW</td>
+                    <td >-0.35</td>
+                    <td >5</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td style="background-color: #e57373;">5.03</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3037.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">欣興</a></td>
+                    <td >3037.TW</td>
+                    <td style="background-color: #e57373;">1.75</td>
+                    <td >4</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td >4.88</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2408.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">南亞科</a></td>
+                    <td >2408.TW</td>
+                    <td >0.58</td>
+                    <td >0</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td style="background-color: #e57373;">6.74</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3105.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">穩懋</a></td>
+                    <td >3105.TWO</td>
+                    <td style="background-color: #e57373;">1.87</td>
+                    <td >4</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td style="background-color: #e57373;">5.34</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2454.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">聯發科</a></td>
+                    <td >2454.TW</td>
+                    <td >1.31</td>
+                    <td >2</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td >3.29</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3707.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">漢磊</a></td>
+                    <td >3707.TWO</td>
+                    <td >0.72</td>
+                    <td >0</td>
+                    <td >2026-01-28</td>
+                    <td >14</td>
+                    <td style="background-color: #e57373;">5.17</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2884.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">玉山金</a></td>
+                    <td >2884.TW</td>
+                    <td style="background-color: #e57373;">1.59</td>
+                    <td >5</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td >1.56</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#5222.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">全訊</a></td>
+                    <td >5222.TW</td>
+                    <td >0.81</td>
+                    <td >0</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td >3.75</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1216.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">統一</a></td>
+                    <td >1216.TW</td>
+                    <td >0.10</td>
+                    <td >0</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td >1.71</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2887.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">台新金</a></td>
+                    <td >2887.TW</td>
+                    <td style="background-color: #e57373;">1.51</td>
+                    <td >10</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td >2.23</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#4585.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">達明</a></td>
+                    <td >4585.TW</td>
+                    <td >0.55</td>
+                    <td >0</td>
+                    <td >2026-02-05</td>
+                    <td >8</td>
+                    <td >4.26</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2317.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">鴻海</a></td>
+                    <td >2317.TW</td>
+                    <td style="background-color: #e57373;">1.65</td>
+                    <td >4</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td >2.54</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1215.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">卜蜂</a></td>
+                    <td >1215.TW</td>
+                    <td >1.20</td>
+                    <td >1</td>
+                    <td >2026-01-21</td>
+                    <td >19</td>
+                    <td >2.48</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2886.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">兆豐金</a></td>
+                    <td >2886.TW</td>
+                    <td >1.18</td>
+                    <td >4</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td >1.22</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2885.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元大金</a></td>
+                    <td >2885.TW</td>
+                    <td style="background-color: #e57373;">1.76</td>
+                    <td >7</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td >2.19</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#0052.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">富邦科技</a></td>
+                    <td >0052.TW</td>
+                    <td style="background-color: #e57373;">1.60</td>
+                    <td >7</td>
+                    <td >2025-11-14</td>
+                    <td style="background-color: #ffcdd2;">65</td>
+                    <td >2.79</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#0050.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元大台灣50</a></td>
+                    <td >0050.TW</td>
+                    <td style="background-color: #e57373;">1.60</td>
+                    <td >7</td>
+                    <td ></td>
+                    <td style="background-color: #e57373;"></td>
+                    <td >1.54</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00893.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">國泰智能電動車</a></td>
+                    <td >00893.TW</td>
+                    <td >1.08</td>
+                    <td >2</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td >1.43</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00757.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">統一FANG+</a></td>
+                    <td >00757.TW</td>
+                    <td >-0.13</td>
+                    <td >10</td>
+                    <td >2026-02-11</td>
+                    <td >4</td>
+                    <td >1.66</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00885.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">富邦越南</a></td>
+                    <td >00885.TW</td>
+                    <td >1.18</td>
+                    <td >3</td>
+                    <td >2026-01-23</td>
+                    <td >17</td>
+                    <td >1.85</td>
+                </tr>
+                <tr>
+                    <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00955.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">中信日本商社</a></td>
+                    <td >00955.TWO</td>
+                    <td >1.06</td>
+                    <td >11</td>
+                    <td >2026-02-25</td>
+                    <td >1</td>
+                    <td >1.93</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="flex-container">
+    <div class="flex-item">
+        <h1>Rank of >=U1</h1>
+        <div class="table-container">
+            <table border="1" style=" width: auto;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>pb1</th>
+                        <th>pb1Days</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3105.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">穩懋</a></td>
+                        <td >3105.TWO</td>
+                        <td style="background-color: #e57373;">1.87</td>
+                        <td >4</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2885.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元大金</a></td>
+                        <td >2885.TW</td>
+                        <td style="background-color: #e57373;">1.76</td>
+                        <td >7</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3037.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">欣興</a></td>
+                        <td >3037.TW</td>
+                        <td style="background-color: #e57373;">1.75</td>
+                        <td >4</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2317.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">鴻海</a></td>
+                        <td >2317.TW</td>
+                        <td style="background-color: #e57373;">1.65</td>
+                        <td >4</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#0050.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元大台灣50</a></td>
+                        <td >0050.TW</td>
+                        <td style="background-color: #e57373;">1.60</td>
+                        <td >7</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#0052.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">富邦科技</a></td>
+                        <td >0052.TW</td>
+                        <td style="background-color: #e57373;">1.60</td>
+                        <td >7</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2884.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">玉山金</a></td>
+                        <td >2884.TW</td>
+                        <td style="background-color: #e57373;">1.59</td>
+                        <td >5</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2887.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">台新金</a></td>
+                        <td >2887.TW</td>
+                        <td style="background-color: #e57373;">1.51</td>
+                        <td >10</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2454.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">聯發科</a></td>
+                        <td >2454.TW</td>
+                        <td >1.31</td>
+                        <td >2</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1215.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">卜蜂</a></td>
+                        <td >1215.TW</td>
+                        <td >1.20</td>
+                        <td >1</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00885.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">富邦越南</a></td>
+                        <td >00885.TW</td>
+                        <td >1.18</td>
+                        <td >3</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2886.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">兆豐金</a></td>
+                        <td >2886.TW</td>
+                        <td >1.18</td>
+                        <td >4</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#8069.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元太</a></td>
+                        <td >8069.TWO</td>
+                        <td >1.08</td>
+                        <td >6</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00893.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">國泰智能電動車</a></td>
+                        <td >00893.TW</td>
+                        <td >1.08</td>
+                        <td >2</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00955.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">中信日本商社</a></td>
+                        <td >00955.TWO</td>
+                        <td >1.06</td>
+                        <td >11</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#5222.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">全訊</a></td>
+                        <td >5222.TW</td>
+                        <td >0.81</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3707.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">漢磊</a></td>
+                        <td >3707.TWO</td>
+                        <td >0.72</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2408.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">南亞科</a></td>
+                        <td >2408.TW</td>
+                        <td >0.58</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#4585.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">達明</a></td>
+                        <td >4585.TW</td>
+                        <td >0.55</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1216.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">統一</a></td>
+                        <td >1216.TW</td>
+                        <td >0.10</td>
+                        <td >0</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00757.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">統一FANG+</a></td>
+                        <td >00757.TW</td>
+                        <td >-0.13</td>
+                        <td >10</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1795.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">美時</a></td>
+                        <td >1795.TW</td>
+                        <td >-0.35</td>
+                        <td >5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <h1>Rank of NATR 20</h1>
+        <div class="table-container">
+            <table border="1" style=" width: auto;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>natr20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2408.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">南亞科</a></td>
+                        <td >2408.TW</td>
+                        <td style="background-color: #e57373;">6.74</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3105.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">穩懋</a></td>
+                        <td >3105.TWO</td>
+                        <td style="background-color: #e57373;">5.34</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3707.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">漢磊</a></td>
+                        <td >3707.TWO</td>
+                        <td style="background-color: #e57373;">5.17</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1795.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">美時</a></td>
+                        <td >1795.TW</td>
+                        <td style="background-color: #e57373;">5.03</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3037.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">欣興</a></td>
+                        <td >3037.TW</td>
+                        <td >4.88</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#4585.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">達明</a></td>
+                        <td >4585.TW</td>
+                        <td >4.26</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#5222.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">全訊</a></td>
+                        <td >5222.TW</td>
+                        <td >3.75</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#8069.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元太</a></td>
+                        <td >8069.TWO</td>
+                        <td >3.38</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2454.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">聯發科</a></td>
+                        <td >2454.TW</td>
+                        <td >3.29</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#0052.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">富邦科技</a></td>
+                        <td >0052.TW</td>
+                        <td >2.79</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2317.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">鴻海</a></td>
+                        <td >2317.TW</td>
+                        <td >2.54</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1215.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">卜蜂</a></td>
+                        <td >1215.TW</td>
+                        <td >2.48</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2887.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">台新金</a></td>
+                        <td >2887.TW</td>
+                        <td >2.23</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2885.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元大金</a></td>
+                        <td >2885.TW</td>
+                        <td >2.19</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00955.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">中信日本商社</a></td>
+                        <td >00955.TWO</td>
+                        <td >1.93</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00885.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">富邦越南</a></td>
+                        <td >00885.TW</td>
+                        <td >1.85</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1216.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">統一</a></td>
+                        <td >1216.TW</td>
+                        <td >1.71</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00757.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">統一FANG+</a></td>
+                        <td >00757.TW</td>
+                        <td >1.66</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2884.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">玉山金</a></td>
+                        <td >2884.TW</td>
+                        <td >1.56</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#0050.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元大台灣50</a></td>
+                        <td >0050.TW</td>
+                        <td >1.54</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00893.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">國泰智能電動車</a></td>
+                        <td >00893.TW</td>
+                        <td >1.43</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2886.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">兆豐金</a></td>
+                        <td >2886.TW</td>
+                        <td >1.22</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <h1>Rank of Breakout Days</h1>
+        <div class="table-container">
+            <table border="1" style=" width: 550px;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>brkDate</th>
+                        <th>brkDays</th>
+                        <th>pb1</th>
+                        <th>pb1Days</th>
+                        <th>natr20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3037.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">欣興</a></td>
+                        <td >3037.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td style="background-color: #e57373;">1.75</td>
+                        <td >4</td>
+                        <td >4.88</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3105.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">穩懋</a></td>
+                        <td >3105.TWO</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td style="background-color: #e57373;">1.87</td>
+                        <td >4</td>
+                        <td style="background-color: #e57373;">5.34</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2454.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">聯發科</a></td>
+                        <td >2454.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td >1.31</td>
+                        <td >2</td>
+                        <td >3.29</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2884.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">玉山金</a></td>
+                        <td >2884.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td style="background-color: #e57373;">1.59</td>
+                        <td >5</td>
+                        <td >1.56</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2887.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">台新金</a></td>
+                        <td >2887.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td style="background-color: #e57373;">1.51</td>
+                        <td >10</td>
+                        <td >2.23</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2885.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元大金</a></td>
+                        <td >2885.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td style="background-color: #e57373;">1.76</td>
+                        <td >7</td>
+                        <td >2.19</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#0050.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元大台灣50</a></td>
+                        <td >0050.TW</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td style="background-color: #e57373;">1.60</td>
+                        <td >7</td>
+                        <td >1.54</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#0052.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">富邦科技</a></td>
+                        <td >0052.TW</td>
+                        <td >2025-11-14</td>
+                        <td style="background-color: #ffcdd2;">65</td>
+                        <td style="background-color: #e57373;">1.60</td>
+                        <td >7</td>
+                        <td >2.79</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1215.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">卜蜂</a></td>
+                        <td >1215.TW</td>
+                        <td >2026-01-21</td>
+                        <td >19</td>
+                        <td >1.20</td>
+                        <td >1</td>
+                        <td >2.48</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00885.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">富邦越南</a></td>
+                        <td >00885.TW</td>
+                        <td >2026-01-23</td>
+                        <td >17</td>
+                        <td >1.18</td>
+                        <td >3</td>
+                        <td >1.85</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#3707.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">漢磊</a></td>
+                        <td >3707.TWO</td>
+                        <td >2026-01-28</td>
+                        <td >14</td>
+                        <td >0.72</td>
+                        <td >0</td>
+                        <td style="background-color: #e57373;">5.17</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#4585.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">達明</a></td>
+                        <td >4585.TW</td>
+                        <td >2026-02-05</td>
+                        <td >8</td>
+                        <td >0.55</td>
+                        <td >0</td>
+                        <td >4.26</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00757.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">統一FANG+</a></td>
+                        <td >00757.TW</td>
+                        <td >2026-02-11</td>
+                        <td >4</td>
+                        <td >-0.13</td>
+                        <td >10</td>
+                        <td >1.66</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#8069.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">元太</a></td>
+                        <td >8069.TWO</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td >1.08</td>
+                        <td >6</td>
+                        <td >3.38</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1795.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">美時</a></td>
+                        <td >1795.TW</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td >-0.35</td>
+                        <td >5</td>
+                        <td style="background-color: #e57373;">5.03</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2408.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">南亞科</a></td>
+                        <td >2408.TW</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td >0.58</td>
+                        <td >0</td>
+                        <td style="background-color: #e57373;">6.74</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#5222.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">全訊</a></td>
+                        <td >5222.TW</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td >0.81</td>
+                        <td >0</td>
+                        <td >3.75</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#1216.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">統一</a></td>
+                        <td >1216.TW</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td >0.10</td>
+                        <td >0</td>
+                        <td >1.71</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2317.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">鴻海</a></td>
+                        <td >2317.TW</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td style="background-color: #e57373;">1.65</td>
+                        <td >4</td>
+                        <td >2.54</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#2886.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">兆豐金</a></td>
+                        <td >2886.TW</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td >1.18</td>
+                        <td >4</td>
+                        <td >1.22</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00893.TW" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">國泰智能電動車</a></td>
+                        <td >00893.TW</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td >1.08</td>
+                        <td >2</td>
+                        <td >1.43</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#00955.TWO" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">中信日本商社</a></td>
+                        <td >00955.TWO</td>
+                        <td >2026-02-25</td>
+                        <td >1</td>
+                        <td >1.06</td>
+                        <td >11</td>
+                        <td >1.93</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>

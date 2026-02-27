@@ -1,0 +1,184 @@
+<meta charset="utf-8" />
+
+<style>
+    /* New Layout Styles */
+    .flex-container {
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* gap: 20px; */
+        width: 1200px;
+    }
+
+    .flex-item {
+        flex: 1;
+        /*max-width: 300px;*/
+        min-width: 0;
+    }
+
+    /* Original Styles */
+    .table-container {
+        /* max-height: 80vh; */
+        /* overflow-y: auto; */
+        /*position: relative;*/
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead th {
+        position: -webkit-sticky;
+        /* for Safari */
+        position: sticky;
+        top: 0;
+        background-color: #f2f2f2;
+        z-index: 1;
+    }
+
+    td,
+    th {
+        font-family: monospace;
+        font-size: 14px;
+        text-align: right;
+        vertical-align: top;
+        padding: 4px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<div class="flex-item">
+    <h1>Stocks</h1>
+    <div class="table-container">
+        <table border="1" style=" width: auto;">
+            <thead>
+                <tr style="text-align: right;">
+                    <th>stockName</th>
+                    <th>stockId</th>
+                    <th>pb1</th>
+                    <th>pb1Days</th>
+                    <th>brkDate</th>
+                    <th>brkDays</th>
+                    <th>natr20</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="flex-container">
+    <div class="flex-item">
+        <h1>Rank of >=U1</h1>
+        <div class="table-container">
+            <table border="1" style=" width: auto;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>pb1</th>
+                        <th>pb1Days</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#300476.SZ" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">勝宏科技</a></td>
+                        <td >300476.SZ</td>
+                        <td style="background-color: #e57373;">1.61</td>
+                        <td >3</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#510500.SS" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">500ETF</a></td>
+                        <td >510500.SS</td>
+                        <td >1.26</td>
+                        <td >2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <h1>Rank of NATR 20</h1>
+        <div class="table-container">
+            <table border="1" style=" width: auto;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>natr20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#300476.SZ" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">勝宏科技</a></td>
+                        <td >300476.SZ</td>
+                        <td >4.77</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#601138.SS" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">工業富聯</a></td>
+                        <td >601138.SS</td>
+                        <td >4.29</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#002230.SZ" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">科大訊飛</a></td>
+                        <td >002230.SZ</td>
+                        <td >3.42</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#561980.SS" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">半導體設備ETF</a></td>
+                        <td >561980.SS</td>
+                        <td >3.23</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#300750.SZ" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">寧德時代</a></td>
+                        <td >300750.SZ</td>
+                        <td >3.07</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <h1>Rank of Breakout Days</h1>
+        <div class="table-container">
+            <table border="1" style=" width: 550px;">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>stockName</th>
+                        <th>stockId</th>
+                        <th>brkDate</th>
+                        <th>brkDays</th>
+                        <th>pb1</th>
+                        <th>pb1Days</th>
+                        <th>natr20</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#510500.SS" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">500ETF</a></td>
+                        <td >510500.SS</td>
+                        <td ></td>
+                        <td style="background-color: #e57373;"></td>
+                        <td >1.26</td>
+                        <td >2</td>
+                        <td >1.93</td>
+                    </tr>
+                    <tr>
+                        <td ><a href="https://countchu.github.io/Dashboard/bbands-html/stock-bbands.html#562500.SS" target="_blank" onclick="window.open(this.href, 'newwindow', 'width=1100,height=600'); return false;">機器人ETF</a></td>
+                        <td >562500.SS</td>
+                        <td >2026-01-28</td>
+                        <td >16</td>
+                        <td >0.72</td>
+                        <td >0</td>
+                        <td >2.15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
