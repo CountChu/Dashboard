@@ -1,0 +1,312 @@
+<meta charset="utf-8" />
+
+<style>
+    .table-container {
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead th {
+        position: -webkit-sticky;
+        /* for Safari */
+        position: sticky;
+        top: 0;
+        background-color: #f2f2f2;
+        z-index: 1;
+    }
+
+    td,
+    th {
+        font-family: monospace;
+        font-size: 14px;
+        text-align: right;
+        vertical-align: top;
+        padding: 4px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<div class="table-container">
+    <table border="1">
+        <thead>
+            <tr style="text-align: right;">
+                <th>name</th>
+                <th>id</th>
+                <th>date</th>
+                <th>price</th>
+                <th>change</th>
+                <th>pctChange</th>
+                <th>pctStdDev5</th>
+                <th>pctStdDev10</th>
+                <th>pctStdDev20</th>
+                <th>pctStdDev30</th>
+                <th>sma5</th>
+                <th>stddev5</th>
+                <th>atr5</th>
+                <th>atr20</th>
+                <th>natr5</th>
+                <th>natr20</th>
+                <th>bias5</th>
+                <th>bias20</th>
+                <th>brkDate</th>
+                <th>brkDays</th>
+                <th>dnStk</th>
+                <th>pb1</th>
+                <th>pb1Days</th>
+                <th>sma20</th>
+                <th>pb2</th>
+                <th>bw2</th>
+                <th>total</th>
+                <th>score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td >50ETF</td>
+                <td >510050.SS</td>
+                <td >2026-04-17</td>
+                <td >2.98</td>
+                <td >-0.03</td>
+                <td >-1.0%</td>
+                <td >0.7%</td>
+                <td >1.1%</td>
+                <td >1.2%</td>
+                <td >1.1%</td>
+                <td >3.0</td>
+                <td >0.0</td>
+                <td >0.03</td>
+                <td >0.04</td>
+                <td >1.0</td>
+                <td >1.3</td>
+                <td style="background-color: #aed581;">-0.5%</td>
+                <td style="background-color: #aed581;">+1.3%</td>
+                <td >2026-04-16</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.99</td>
+                <td >0</td>
+                <td >2.941</td>
+                <td style="background-color: #ffcdd2;">+0.74</td>
+                <td >8.2</td>
+                <td >8.2</td>
+                <td >0</td>
+            </tr>
+            <tr>
+                <td >500ETF</td>
+                <td >510500.SS</td>
+                <td >2026-04-17</td>
+                <td >8.29</td>
+                <td >+0.04</td>
+                <td >+0.5%</td>
+                <td >1.0%</td>
+                <td >1.8%</td>
+                <td >2.0%</td>
+                <td >1.8%</td>
+                <td >8.2</td>
+                <td >0.1</td>
+                <td >0.15</td>
+                <td >0.18</td>
+                <td >1.8</td>
+                <td >2.1</td>
+                <td >+1.5%</td>
+                <td >+5.4%</td>
+                <td >2026-03-13</td>
+                <td style="background-color: #ffcdd2;">24</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.45</td>
+                <td >4</td>
+                <td >7.868</td>
+                <td style="background-color: #ffcdd2;">+0.98</td>
+                <td >17.4</td>
+                <td >17.4</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >半導體ETF</td>
+                <td >561980.SS</td>
+                <td >2026-04-17</td>
+                <td >2.29</td>
+                <td >0.00</td>
+                <td ></td>
+                <td >1.5%</td>
+                <td >2.4%</td>
+                <td >2.7%</td>
+                <td >2.5%</td>
+                <td >2.3</td>
+                <td >0.0</td>
+                <td >0.06</td>
+                <td >0.07</td>
+                <td >2.8</td>
+                <td >3.1</td>
+                <td >+1.0%</td>
+                <td >+7.3%</td>
+                <td >2026-04-16</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #e57373;">+1.29</td>
+                <td >8</td>
+                <td >2.135</td>
+                <td style="background-color: #ffcdd2;">+0.89</td>
+                <td >23.1</td>
+                <td >23.1</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >機器人ETF</td>
+                <td >562500.SS</td>
+                <td >2026-04-17</td>
+                <td >1.01</td>
+                <td >+0.01</td>
+                <td >+1.0%</td>
+                <td >1.3%</td>
+                <td >2.3%</td>
+                <td >2.2%</td>
+                <td >1.9%</td>
+                <td >1.0</td>
+                <td >0.0</td>
+                <td >0.02</td>
+                <td >0.02</td>
+                <td >2.1</td>
+                <td >2.4</td>
+                <td >+2.0%</td>
+                <td >+6.5%</td>
+                <td >2026-03-12</td>
+                <td style="background-color: #ffcdd2;">25</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.49</td>
+                <td >4</td>
+                <td >0.948</td>
+                <td style="background-color: #ffcdd2;">+0.99</td>
+                <td >20.8</td>
+                <td >20.8</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >工業富聯</td>
+                <td >601138.SS</td>
+                <td >2026-04-17</td>
+                <td >60.97</td>
+                <td >+1.65</td>
+                <td >+2.8%</td>
+                <td style="background-color: #ffcdd2;">3.2%</td>
+                <td style="background-color: #ffcdd2;">3.4%</td>
+                <td style="background-color: #ffcdd2;">3.2%</td>
+                <td style="background-color: #ffcdd2;">3.0%</td>
+                <td >58.5</td>
+                <td >1.8</td>
+                <td >2.43</td>
+                <td >2.27</td>
+                <td >4.0</td>
+                <td style="background-color: #ffcdd2;">3.7</td>
+                <td style="background-color: #ffcdd2;">+4.1%</td>
+                <td style="background-color: #ffcdd2;">+14.2%</td>
+                <td >2026-01-27</td>
+                <td style="background-color: #ffcdd2;">51</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.48</td>
+                <td >8</td>
+                <td >53.4</td>
+                <td style="background-color: #ffcdd2;">+0.99</td>
+                <td >38.8</td>
+                <td >38.8</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >科大訊飛</td>
+                <td >002230.SZ</td>
+                <td >2026-04-17</td>
+                <td >48.24</td>
+                <td >+0.14</td>
+                <td >+0.3%</td>
+                <td >1.1%</td>
+                <td >1.9%</td>
+                <td >2.1%</td>
+                <td >1.9%</td>
+                <td >48.0</td>
+                <td >0.3</td>
+                <td >1.08</td>
+                <td >1.34</td>
+                <td >2.2</td>
+                <td >2.8</td>
+                <td style="background-color: #dcedc8;">+0.5%</td>
+                <td style="background-color: #dcedc8;">+2.3%</td>
+                <td >2026-04-14</td>
+                <td >3</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.09</td>
+                <td >1</td>
+                <td >47.14</td>
+                <td style="background-color: #ffcdd2;">+0.80</td>
+                <td >14.9</td>
+                <td >14.9</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >勝宏</td>
+                <td >300476.SZ</td>
+                <td >2026-04-17</td>
+                <td >326.42</td>
+                <td >+22.92</td>
+                <td >+7.5%</td>
+                <td style="background-color: #e57373;">4.2%</td>
+                <td style="background-color: #e57373;">3.9%</td>
+                <td style="background-color: #e57373;">3.6%</td>
+                <td style="background-color: #e57373;">3.6%</td>
+                <td >305.9</td>
+                <td >11.3</td>
+                <td >18.98</td>
+                <td >15.05</td>
+                <td style="background-color: #e57373;">5.8</td>
+                <td style="background-color: #e57373;">4.6</td>
+                <td style="background-color: #e57373;">+6.7%</td>
+                <td style="background-color: #e57373;">+18.4%</td>
+                <td >2025-10-30</td>
+                <td style="background-color: #ffcdd2;">112</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.72</td>
+                <td >6</td>
+                <td >275.61</td>
+                <td style="background-color: #e57373;">+1.11</td>
+                <td >50.9</td>
+                <td >50.9</td>
+                <td style="background-color: #e57373;">10</td>
+            </tr>
+            <tr>
+                <td >寧德時代</td>
+                <td >300750.SZ</td>
+                <td >2026-04-17</td>
+                <td >444.20</td>
+                <td >-9.78</td>
+                <td >-2.1%</td>
+                <td >2.8%</td>
+                <td >3.2%</td>
+                <td >2.7%</td>
+                <td >2.6%</td>
+                <td >437.4</td>
+                <td >10.1</td>
+                <td >18.17</td>
+                <td >15.47</td>
+                <td style="background-color: #ffcdd2;">4.1</td>
+                <td >3.5</td>
+                <td >+1.6%</td>
+                <td >+8.3%</td>
+                <td >2026-04-16</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #e57373;">+1.41</td>
+                <td >6</td>
+                <td >410.27</td>
+                <td style="background-color: #ffcdd2;">+0.96</td>
+                <td >28.7</td>
+                <td >28.7</td>
+                <td >5</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
