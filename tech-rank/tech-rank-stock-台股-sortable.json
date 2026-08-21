@@ -1,0 +1,166 @@
+{
+  "headers": [
+    "stockName",
+    "stockId"
+  ],
+  "rows": [
+    {
+      "stockName": "元大金",
+      "stockId": "2885.TW"
+    },
+    {
+      "stockName": "大立光",
+      "stockId": "3008.TW"
+    },
+    {
+      "stockName": "聯發科",
+      "stockId": "2454.TW"
+    },
+    {
+      "stockName": "台達電",
+      "stockId": "2308.TW"
+    },
+    {
+      "stockName": "鴻海",
+      "stockId": "2317.TW"
+    },
+    {
+      "stockName": "中美晶",
+      "stockId": "5483.TWO"
+    },
+    {
+      "stockName": "欣興",
+      "stockId": "3037.TW"
+    },
+    {
+      "stockName": "台玻",
+      "stockId": "1802.TW"
+    },
+    {
+      "stockName": "台塑",
+      "stockId": "1301.TW"
+    },
+    {
+      "stockName": "華邦電",
+      "stockId": "2344.TW"
+    },
+    {
+      "stockName": "漢翔",
+      "stockId": "2634.TW"
+    },
+    {
+      "stockName": "東元",
+      "stockId": "1504.TW"
+    },
+    {
+      "stockName": "全訊",
+      "stockId": "5222.TW"
+    },
+    {
+      "stockName": "兆豐金",
+      "stockId": "2886.TW"
+    },
+    {
+      "stockName": "南亞科",
+      "stockId": "2408.TW"
+    },
+    {
+      "stockName": "統一",
+      "stockId": "1216.TW"
+    },
+    {
+      "stockName": "台新金",
+      "stockId": "2887.TW"
+    },
+    {
+      "stockName": "玉山金",
+      "stockId": "2884.TW"
+    },
+    {
+      "stockName": "永豐餘",
+      "stockId": "1907.TW"
+    },
+    {
+      "stockName": "大成",
+      "stockId": "1210.TW"
+    },
+    {
+      "stockName": "台塑化",
+      "stockId": "6505.TW"
+    },
+    {
+      "stockName": "統一超",
+      "stockId": "2912.TW"
+    },
+    {
+      "stockName": "長榮",
+      "stockId": "2603.TW"
+    },
+    {
+      "stockName": "穩懋",
+      "stockId": "3105.TWO"
+    },
+    {
+      "stockName": "啟碁",
+      "stockId": "6285.TW"
+    },
+    {
+      "stockName": "漢磊",
+      "stockId": "3707.TWO"
+    },
+    {
+      "stockName": "美時",
+      "stockId": "1795.TW"
+    },
+    {
+      "stockName": "達明",
+      "stockId": "4585.TW"
+    },
+    {
+      "stockName": "國巨",
+      "stockId": "2327.TW"
+    },
+    {
+      "stockName": "敘豐",
+      "stockId": "3485.TWO"
+    },
+    {
+      "stockName": "卜蜂",
+      "stockId": "1215.TW"
+    },
+    {
+      "stockName": "元太",
+      "stockId": "8069.TWO"
+    }
+  ],
+  "highlighted": [
+    [
+      "[\"大立光\",\"3008.TW\"]",
+      13
+    ],
+    [
+      "[\"鴻海\",\"2317.TW\"]",
+      12
+    ],
+    [
+      "[\"中美晶\",\"5483.TWO\"]",
+      12
+    ],
+    [
+      "[\"全訊\",\"5222.TW\"]",
+      8
+    ],
+    [
+      "[\"全訊\",\"5222.TW\"]",
+      14
+    ],
+    [
+      "[\"長榮\",\"2603.TW\"]",
+      13
+    ],
+    [
+      "[\"達明\",\"4585.TW\"]",
+      12
+    ]
+  ]
+}
