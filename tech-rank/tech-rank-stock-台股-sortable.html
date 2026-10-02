@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rank of Trend Velocity - sortable</title>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: Arial, sans-serif; margin: 20px; color: #222; }
+    h1 { margin-bottom: 8px; }
+    .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+    .toolbar button, .toolbar label { padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; }
+    .meta { color: #555; margin-bottom: 10px; }
+    .table-wrap { overflow: auto; max-height: 70vh; border: 1px solid #ddd; border-radius: 6px; }
+    table { border-collapse: collapse; width: 100%; min-width: 900px; text-align: right; }
+    thead th { position: sticky; top: 0; z-index: 2; background: #fff; border-bottom: 2px solid #ccc; padding: 8px; text-align: left; }
+    tbody td { padding: 8px; border-bottom: 1px solid #eee; }
+    tbody tr:nth-child(even) { background: #f8f8f8; }
+    tbody tr:hover { background: #eef4ff; }
+    tbody tr.hidden { display: none; }
+    .control-cell { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .drag-handle { cursor: move; color: #888; user-select: none; }
+    .hide-btn { border: none; background: transparent; color: #c00; cursor: pointer; font-size: 14px; }
+    .data-cell { cursor: pointer; }
+    td.hl { background-color: #ffeb3b !important; }
+    td[style] { position: relative; }
+    a { color: #0b57d0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .sortable-ghost { opacity: 0.45; }
+  </style>
+</head>
+<body>
+  <h1>Rank of Trend Velocity</h1>
+  <div class="toolbar">
+    <button id="saveBtn" type="button">Save Order</button>
+    <button id="loadBtn" type="button">Load Order</button>
+    <button id="showAllBtn" type="button">Show All</button>
+    <input id="fileInput" type="file" accept="application/json" hidden />
+  </div>
+  <div class="meta">Visible <span id="visible-count">84</span> / Hidden <span id="hidden-count">0</span></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th class="control-head"></th><th>stockName</th><th>stockId</th><th>isEtf</th><th>hold</th><th>unit</th><th>price</th><th>nav</th><th>brkDate</th><th>brkDays</th><th>pb1</th><th>pb1Days</th><th>natr20</th><th>trendVel</th><th>bullish</th><th>bullRate</th></tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr data-row-key="[&quot;欣興&quot;,&quot;3037.TW&quot;]" data-row-index="0">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#3037.TW" target="gsrLinkWindow">欣興</a></td><td class="data-cell" data-col-index="1">3037.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">1020.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-01</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">32</td><td class="data-cell" data-col-index="9">1.16</td><td class="data-cell" data-col-index="10">9</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.28</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">1.43%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.78)">+89.7%</td></tr>
+<tr data-row-key="[&quot;上銀&quot;,&quot;2049.TW&quot;]" data-row-index="1">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2049.TW" target="gsrLinkWindow">上銀</a></td><td class="data-cell" data-col-index="1">2049.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">373.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.06</td><td class="data-cell" data-col-index="10">8</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.01</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">1.42%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.57)">+59.8%</td></tr>
+<tr data-row-key="[&quot;南亞科&quot;,&quot;2408.TW&quot;]" data-row-index="2">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2408.TW" target="gsrLinkWindow">南亞科</a></td><td class="data-cell" data-col-index="1">2408.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">512.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.27</td><td class="data-cell" data-col-index="10">7</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.89</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">1.41%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">66</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.73)">+82.6%</td></tr>
+<tr data-row-key="[&quot;太空衛星&quot;,&quot;00910.TW&quot;]" data-row-index="3">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00910.TW" target="gsrLinkWindow">太空衛星</a></td><td class="data-cell" data-col-index="1">00910.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">63.40</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.13</td><td class="data-cell" data-col-index="10">8</td><td class="data-cell" data-col-index="11">2.83</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">1.01%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.63)">+68.5%</td></tr>
+<tr data-row-key="[&quot;大立光&quot;,&quot;3008.TW&quot;]" data-row-index="4">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#3008.TW" target="gsrLinkWindow">大立光</a></td><td class="data-cell" data-col-index="1">3008.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">100</td><td class="data-cell" data-col-index="5">4610.00</td><td class="data-cell" data-col-index="6">461,000</td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.18</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">5.81</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">1.01%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.22)">3</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.64)">+70.7%</td></tr>
+<tr data-row-key="[&quot;華邦電&quot;,&quot;2344.TW&quot;]" data-row-index="5">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2344.TW" target="gsrLinkWindow">華邦電</a></td><td class="data-cell" data-col-index="1">2344.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">183.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-03</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">30</td><td class="data-cell" data-col-index="9">1.20</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">7.17</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.98%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.7)">+78.3%</td></tr>
+<tr data-row-key="[&quot;穩懋&quot;,&quot;3105.TWO&quot;]" data-row-index="6">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#3105.TWO" target="gsrLinkWindow">穩懋</a></td><td class="data-cell" data-col-index="1">3105.TWO</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">378.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.93</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">8.44</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.94%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.72)">+81.0%</td></tr>
+<tr data-row-key="[&quot;聯發科&quot;,&quot;2454.TW&quot;]" data-row-index="7">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2454.TW" target="gsrLinkWindow">聯發科</a></td><td class="data-cell" data-col-index="1">2454.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">100</td><td class="data-cell" data-col-index="5">4210.00</td><td class="data-cell" data-col-index="6">421,000</td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.22</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">5.75</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.90%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.65)">+71.2%</td></tr>
+<tr data-row-key="[&quot;正隆&quot;,&quot;1904.TW&quot;]" data-row-index="8">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1904.TW" target="gsrLinkWindow">正隆</a></td><td class="data-cell" data-col-index="1">1904.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">24.45</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.27</td><td class="data-cell" data-col-index="10">7</td><td class="data-cell" data-col-index="11">3.33</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.83%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">57</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.66)">+72.8%</td></tr>
+<tr data-row-key="[&quot;晶心科&quot;,&quot;6533.TW&quot;]" data-row-index="9">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#6533.TW" target="gsrLinkWindow">晶心科</a></td><td class="data-cell" data-col-index="1">6533.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">246.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.98</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">5.32</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.81%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.36)">9</td><td class="data-cell" data-col-index="14">+23.9%</td></tr>
+<tr data-row-key="[&quot;英業達&quot;,&quot;2356.TW&quot;]" data-row-index="10">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2356.TW" target="gsrLinkWindow">英業達</a></td><td class="data-cell" data-col-index="1">2356.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">69.90</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-06-05</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">49</td><td class="data-cell" data-col-index="9">1.39</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">5.01</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.76%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.52)">+53.3%</td></tr>
+<tr data-row-key="[&quot;元大金&quot;,&quot;2885.TW&quot;]" data-row-index="11">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2885.TW" target="gsrLinkWindow">元大金</a></td><td class="data-cell" data-col-index="1">2885.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">14,000</td><td class="data-cell" data-col-index="5">69.70</td><td class="data-cell" data-col-index="6">975,800</td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.14</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11">2.99</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.71%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">184</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.85)">+100.0%</td></tr>
+<tr data-row-key="[&quot;昇達科&quot;,&quot;3491.TWO&quot;]" data-row-index="12">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#3491.TWO" target="gsrLinkWindow">昇達科</a></td><td class="data-cell" data-col-index="1">3491.TWO</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">1375.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-06-24</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">37</td><td class="data-cell" data-col-index="9">1.19</td><td class="data-cell" data-col-index="10">2</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">7.85</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.69%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.71)">+80.4%</td></tr>
+<tr data-row-key="[&quot;元大防衛&quot;,&quot;00965.TW&quot;]" data-row-index="13">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00965.TW" target="gsrLinkWindow">元大防衛</a></td><td class="data-cell" data-col-index="1">00965.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">27.32</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7"></td><td class="data-cell" data-col-index="8" style="background-color: #e57373"></td><td class="data-cell" data-col-index="9">1.22</td><td class="data-cell" data-col-index="10">10</td><td class="data-cell" data-col-index="11">1.40</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.68%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.29)">6</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.54)">+55.4%</td></tr>
+<tr data-row-key="[&quot;達發&quot;,&quot;6526.TW&quot;]" data-row-index="14">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#6526.TW" target="gsrLinkWindow">達發</a></td><td class="data-cell" data-col-index="1">6526.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">610.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.82</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">5.11</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.67%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.54)">+56.0%</td></tr>
+<tr data-row-key="[&quot;穎崴&quot;,&quot;6515.TW&quot;]" data-row-index="15">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#6515.TW" target="gsrLinkWindow">穎崴</a></td><td class="data-cell" data-col-index="1">6515.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">6750.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">0.82</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">7.98</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.65%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.67)">+75.0%</td></tr>
+<tr data-row-key="[&quot;漢測&quot;,&quot;7856.TWO&quot;]" data-row-index="16">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#7856.TWO" target="gsrLinkWindow">漢測</a></td><td class="data-cell" data-col-index="1">7856.TWO</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">3840.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-07</td><td class="data-cell" data-col-index="8">5</td><td class="data-cell" data-col-index="9">0.97</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">8.59</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.59%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.82)">+96.2%</td></tr>
+<tr data-row-key="[&quot;統一FANG&quot;,&quot;00757.TW&quot;]" data-row-index="17">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00757.TW" target="gsrLinkWindow">統一FANG</a></td><td class="data-cell" data-col-index="1">00757.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">9,000</td><td class="data-cell" data-col-index="5">141.50</td><td class="data-cell" data-col-index="6">1,273,500</td><td class="data-cell" data-col-index="7">2026-08-11</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">1.10</td><td class="data-cell" data-col-index="10">10</td><td class="data-cell" data-col-index="11">1.45</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.57%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">79</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.58)">+60.9%</td></tr>
+<tr data-row-key="[&quot;復華日本龍頭&quot;,&quot;00949.TW&quot;]" data-row-index="18">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00949.TW" target="gsrLinkWindow">復華日本龍頭</a></td><td class="data-cell" data-col-index="1">00949.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">22.39</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7"></td><td class="data-cell" data-col-index="8" style="background-color: #e57373"></td><td class="data-cell" data-col-index="9">1.28</td><td class="data-cell" data-col-index="10">11</td><td class="data-cell" data-col-index="11">1.31</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.53%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">63</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.79)">+91.3%</td></tr>
+<tr data-row-key="[&quot;台玻&quot;,&quot;1802.TW&quot;]" data-row-index="19">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1802.TW" target="gsrLinkWindow">台玻</a></td><td class="data-cell" data-col-index="1">1802.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">57.90</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-16</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">21</td><td class="data-cell" data-col-index="9">1.15</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.35</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.51%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.73)">+83.2%</td></tr>
+<tr data-row-key="[&quot;永豐餘&quot;,&quot;1907.TW&quot;]" data-row-index="20">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1907.TW" target="gsrLinkWindow">永豐餘</a></td><td class="data-cell" data-col-index="1">1907.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">28.95</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.41</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">2.69</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.49%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">44</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.5)">+50.0%</td></tr>
+<tr data-row-key="[&quot;鴻海&quot;,&quot;2317.TW&quot;]" data-row-index="21">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2317.TW" target="gsrLinkWindow">鴻海</a></td><td class="data-cell" data-col-index="1">2317.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">3,000</td><td class="data-cell" data-col-index="5">259.50</td><td class="data-cell" data-col-index="6">778,500</td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.81</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">3.57</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.49%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+37.5%</td></tr>
+<tr data-row-key="[&quot;國泰台灣科技龍頭&quot;,&quot;00881.TW&quot;]" data-row-index="22">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00881.TW" target="gsrLinkWindow">國泰台灣科技龍頭</a></td><td class="data-cell" data-col-index="1">00881.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">54.80</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-06</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">28</td><td class="data-cell" data-col-index="9">1.19</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11">2.95</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.49%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.8)">+92.4%</td></tr>
+<tr data-row-key="[&quot;華通&quot;,&quot;2313.TW&quot;]" data-row-index="23">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2313.TW" target="gsrLinkWindow">華通</a></td><td class="data-cell" data-col-index="1">2313.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">215.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-06</td><td class="data-cell" data-col-index="8">6</td><td class="data-cell" data-col-index="9">0.93</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.91</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.46%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.71)">+79.9%</td></tr>
+<tr data-row-key="[&quot;中信日商&quot;,&quot;00955.TWO&quot;]" data-row-index="24">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00955.TWO" target="gsrLinkWindow">中信日商</a></td><td class="data-cell" data-col-index="1">00955.TWO</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">23,000</td><td class="data-cell" data-col-index="5">15.55</td><td class="data-cell" data-col-index="6">357,650</td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.88</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">1.46</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.43%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.31)">7</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.64)">+70.7%</td></tr>
+<tr data-row-key="[&quot;富邦台灣半導體&quot;,&quot;00892.TW&quot;]" data-row-index="25">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00892.TW" target="gsrLinkWindow">富邦台灣半導體</a></td><td class="data-cell" data-col-index="1">00892.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">40.95</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.00</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11">3.38</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.43%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.79)">+91.8%</td></tr>
+<tr data-row-key="[&quot;元大高股息&quot;,&quot;0056.TW&quot;]" data-row-index="26">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#0056.TW" target="gsrLinkWindow">元大高股息</a></td><td class="data-cell" data-col-index="1">0056.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">53.40</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7"></td><td class="data-cell" data-col-index="8" style="background-color: #e57373"></td><td class="data-cell" data-col-index="9">1.28</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11">2.33</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.43%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">154</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.79)">+90.8%</td></tr>
+<tr data-row-key="[&quot;元大正2&quot;,&quot;00631L.TW&quot;]" data-row-index="27">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00631L.TW" target="gsrLinkWindow">元大正2</a></td><td class="data-cell" data-col-index="1">00631L.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">6,000</td><td class="data-cell" data-col-index="5">35.69</td><td class="data-cell" data-col-index="6">214,140</td><td class="data-cell" data-col-index="7">2026-07-16</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">20</td><td class="data-cell" data-col-index="9">1.04</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11">4.76</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.42%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.8)">+93.5%</td></tr>
+<tr data-row-key="[&quot;長榮&quot;,&quot;2603.TW&quot;]" data-row-index="28">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2603.TW" target="gsrLinkWindow">長榮</a></td><td class="data-cell" data-col-index="1">2603.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">219.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-06-03</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">51</td><td class="data-cell" data-col-index="9" style="background-color: #e57373">1.50</td><td class="data-cell" data-col-index="10">6</td><td class="data-cell" data-col-index="11">2.32</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.42%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.43)">12</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.71)">+79.3%</td></tr>
+<tr data-row-key="[&quot;中信金&quot;,&quot;2891.TW&quot;]" data-row-index="29">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2891.TW" target="gsrLinkWindow">中信金</a></td><td class="data-cell" data-col-index="1">2891.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">65.80</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.92</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">2.76</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.38%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.8)">+93.5%</td></tr>
+<tr data-row-key="[&quot;台新金&quot;,&quot;2887.TW&quot;]" data-row-index="30">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2887.TW" target="gsrLinkWindow">台新金</a></td><td class="data-cell" data-col-index="1">2887.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">37.75</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7"></td><td class="data-cell" data-col-index="8" style="background-color: #e57373"></td><td class="data-cell" data-col-index="9" style="background-color: #e57373">1.74</td><td class="data-cell" data-col-index="10">2</td><td class="data-cell" data-col-index="11">3.05</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.38%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">50</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.77)">+88.6%</td></tr>
+<tr data-row-key="[&quot;國泰台灣領袖50&quot;,&quot;00922.TW&quot;]" data-row-index="31">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00922.TW" target="gsrLinkWindow">國泰台灣領袖50</a></td><td class="data-cell" data-col-index="1">00922.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">41.27</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-06</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">28</td><td class="data-cell" data-col-index="9">1.20</td><td class="data-cell" data-col-index="10">4</td><td class="data-cell" data-col-index="11">2.55</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.38%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.81)">+94.6%</td></tr>
+<tr data-row-key="[&quot;元大中型100&quot;,&quot;0051.TW&quot;]" data-row-index="32">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#0051.TW" target="gsrLinkWindow">元大中型100</a></td><td class="data-cell" data-col-index="1">0051.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">144.45</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.10</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11">2.61</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.37%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.8)">+93.5%</td></tr>
+<tr data-row-key="[&quot;國泰永續高股息&quot;,&quot;00878.TW&quot;]" data-row-index="33">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00878.TW" target="gsrLinkWindow">國泰永續高股息</a></td><td class="data-cell" data-col-index="1">00878.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">33.87</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-06-23</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">37</td><td class="data-cell" data-col-index="9">1.24</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11">1.95</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.31%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">86</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.76)">+87.5%</td></tr>
+<tr data-row-key="[&quot;富邦越南&quot;,&quot;00885.TW&quot;]" data-row-index="34">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00885.TW" target="gsrLinkWindow">富邦越南</a></td><td class="data-cell" data-col-index="1">00885.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">17.83</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.36</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">1.64</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.30%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.57)">+59.8%</td></tr>
+<tr data-row-key="[&quot;國泰金&quot;,&quot;2882.TW&quot;]" data-row-index="35">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2882.TW" target="gsrLinkWindow">國泰金</a></td><td class="data-cell" data-col-index="1">2882.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">101.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-31</td><td class="data-cell" data-col-index="8">10</td><td class="data-cell" data-col-index="9">1.20</td><td class="data-cell" data-col-index="10">1</td><td class="data-cell" data-col-index="11">3.12</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.30%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">74</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.69)">+77.7%</td></tr>
+<tr data-row-key="[&quot;元大台灣&quot;,&quot;0050.TW&quot;]" data-row-index="36">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#0050.TW" target="gsrLinkWindow">元大台灣</a></td><td class="data-cell" data-col-index="1">0050.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">14,000</td><td class="data-cell" data-col-index="5">106.40</td><td class="data-cell" data-col-index="6">1,489,600</td><td class="data-cell" data-col-index="7">2026-07-06</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">28</td><td class="data-cell" data-col-index="9">1.12</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11">2.49</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.30%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.82)">+95.1%</td></tr>
+<tr data-row-key="[&quot;富邦台50&quot;,&quot;006208.TW&quot;]" data-row-index="37">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#006208.TW" target="gsrLinkWindow">富邦台50</a></td><td class="data-cell" data-col-index="1">006208.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">243.45</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-06</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">28</td><td class="data-cell" data-col-index="9">1.12</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11">2.47</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.30%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.82)">+95.1%</td></tr>
+<tr data-row-key="[&quot;富邦公司治理&quot;,&quot;00692.TW&quot;]" data-row-index="38">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00692.TW" target="gsrLinkWindow">富邦公司治理</a></td><td class="data-cell" data-col-index="1">00692.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">91.05</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-06</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">28</td><td class="data-cell" data-col-index="9">1.12</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11">2.33</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.29%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.82)">+95.1%</td></tr>
+<tr data-row-key="[&quot;富邦科技&quot;,&quot;0052.TW&quot;]" data-row-index="39">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#0052.TW" target="gsrLinkWindow">富邦科技</a></td><td class="data-cell" data-col-index="1">0052.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">25,000</td><td class="data-cell" data-col-index="5">61.95</td><td class="data-cell" data-col-index="6">1,548,750</td><td class="data-cell" data-col-index="7">2026-07-16</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">20</td><td class="data-cell" data-col-index="9">1.06</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11">2.62</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.29%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.6)">+63.6%</td></tr>
+<tr data-row-key="[&quot;友達&quot;,&quot;2409.TW&quot;]" data-row-index="40">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2409.TW" target="gsrLinkWindow">友達</a></td><td class="data-cell" data-col-index="1">2409.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">25.80</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">0.87</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.57</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.28%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.68)">+76.1%</td></tr>
+<tr data-row-key="[&quot;元大日經225&quot;,&quot;00661.TW&quot;]" data-row-index="41">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00661.TW" target="gsrLinkWindow">元大日經225</a></td><td class="data-cell" data-col-index="1">00661.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">88.65</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-06</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">28</td><td class="data-cell" data-col-index="9">1.27</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11">2.13</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.28%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.77)">+88.0%</td></tr>
+<tr data-row-key="[&quot;富邦臺灣中小&quot;,&quot;00733.TW&quot;]" data-row-index="42">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00733.TW" target="gsrLinkWindow">富邦臺灣中小</a></td><td class="data-cell" data-col-index="1">00733.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">66.45</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.99</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">3.95</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.28%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.66)">+73.4%</td></tr>
+<tr data-row-key="[&quot;統一美國50&quot;,&quot;009811.TW&quot;]" data-row-index="43">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#009811.TW" target="gsrLinkWindow">統一美國50</a></td><td class="data-cell" data-col-index="1">009811.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">13.46</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.90</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">0.93</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.26%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">78</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.68)">+76.1%</td></tr>
+<tr data-row-key="[&quot;玉山金&quot;,&quot;2884.TW&quot;]" data-row-index="44">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2884.TW" target="gsrLinkWindow">玉山金</a></td><td class="data-cell" data-col-index="1">2884.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">37.65</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-10</td><td class="data-cell" data-col-index="8">4</td><td class="data-cell" data-col-index="9">0.77</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">2.28</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.25%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">45</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.54)">+55.4%</td></tr>
+<tr data-row-key="[&quot;東元&quot;,&quot;1504.TW&quot;]" data-row-index="45">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1504.TW" target="gsrLinkWindow">東元</a></td><td class="data-cell" data-col-index="1">1504.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">70.60</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-07</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">28</td><td class="data-cell" data-col-index="9">1.41</td><td class="data-cell" data-col-index="10">2</td><td class="data-cell" data-col-index="11">3.93</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.21%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+29.3%</td></tr>
+<tr data-row-key="[&quot;中鋼&quot;,&quot;2002.TW&quot;]" data-row-index="46">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2002.TW" target="gsrLinkWindow">中鋼</a></td><td class="data-cell" data-col-index="1">2002.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">19.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.37</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">1.90</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.20%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.43)">12</td><td class="data-cell" data-col-index="14">+38.6%</td></tr>
+<tr data-row-key="[&quot;達明&quot;,&quot;4585.TW&quot;]" data-row-index="47">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#4585.TW" target="gsrLinkWindow">達明</a></td><td class="data-cell" data-col-index="1">4585.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">305.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.78</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">4.14</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.19%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+31.0%</td></tr>
+<tr data-row-key="[&quot;啟碁&quot;,&quot;6285.TW&quot;]" data-row-index="48">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#6285.TW" target="gsrLinkWindow">啟碁</a></td><td class="data-cell" data-col-index="1">6285.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">245.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.59</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.39</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.18%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.56)">+58.1%</td></tr>
+<tr data-row-key="[&quot;全訊&quot;,&quot;5222.TW&quot;]" data-row-index="49">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#5222.TW" target="gsrLinkWindow">全訊</a></td><td class="data-cell" data-col-index="1">5222.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">123.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-15</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">22</td><td class="data-cell" data-col-index="9">1.38</td><td class="data-cell" data-col-index="10">2</td><td class="data-cell" data-col-index="11">3.75</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.16%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+27.7%</td></tr>
+<tr data-row-key="[&quot;台積電&quot;,&quot;2330.TW&quot;]" data-row-index="50">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2330.TW" target="gsrLinkWindow">台積電</a></td><td class="data-cell" data-col-index="1">2330.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">2395.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.77</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">2.55</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.14%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.83)">+97.3%</td></tr>
+<tr data-row-key="[&quot;富邦金&quot;,&quot;2881.TW&quot;]" data-row-index="51">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2881.TW" target="gsrLinkWindow">富邦金</a></td><td class="data-cell" data-col-index="1">2881.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">129.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-05</td><td class="data-cell" data-col-index="8">7</td><td class="data-cell" data-col-index="9">1.01</td><td class="data-cell" data-col-index="10">1</td><td class="data-cell" data-col-index="11">2.95</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.13%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">68</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.62)">+67.4%</td></tr>
+<tr data-row-key="[&quot;台達電&quot;,&quot;2308.TW&quot;]" data-row-index="52">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2308.TW" target="gsrLinkWindow">台達電</a></td><td class="data-cell" data-col-index="1">2308.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">300</td><td class="data-cell" data-col-index="5">1885.00</td><td class="data-cell" data-col-index="6">565,500</td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.17</td><td class="data-cell" data-col-index="10">2</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.04</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.13%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.64)">+70.1%</td></tr>
+<tr data-row-key="[&quot;三竹&quot;,&quot;8284.TWO&quot;]" data-row-index="53">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#8284.TWO" target="gsrLinkWindow">三竹</a></td><td class="data-cell" data-col-index="1">8284.TWO</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">65.70</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7"></td><td class="data-cell" data-col-index="8" style="background-color: #e57373"></td><td class="data-cell" data-col-index="9" style="background-color: #e57373">2.18</td><td class="data-cell" data-col-index="10">2</td><td class="data-cell" data-col-index="11">1.38</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.13%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">38</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.6)">+64.7%</td></tr>
+<tr data-row-key="[&quot;陽明&quot;,&quot;2609.TW&quot;]" data-row-index="54">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2609.TW" target="gsrLinkWindow">陽明</a></td><td class="data-cell" data-col-index="1">2609.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">51.60</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">1.02</td><td class="data-cell" data-col-index="10">1</td><td class="data-cell" data-col-index="11">2.41</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.12%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">46</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.53)">+54.4%</td></tr>
+<tr data-row-key="[&quot;中鼎&quot;,&quot;9933.TW&quot;]" data-row-index="55">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#9933.TW" target="gsrLinkWindow">中鼎</a></td><td class="data-cell" data-col-index="1">9933.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">42.90</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-06-25</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">36</td><td class="data-cell" data-col-index="9">1.45</td><td class="data-cell" data-col-index="10">3</td><td class="data-cell" data-col-index="11">3.12</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.11%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.63)">+67.9%</td></tr>
+<tr data-row-key="[&quot;兆豐金&quot;,&quot;2886.TW&quot;]" data-row-index="56">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2886.TW" target="gsrLinkWindow">兆豐金</a></td><td class="data-cell" data-col-index="1">2886.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">47.35</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-11</td><td class="data-cell" data-col-index="8">3</td><td class="data-cell" data-col-index="9">-0.17</td><td class="data-cell" data-col-index="10">2</td><td class="data-cell" data-col-index="11">2.80</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.11%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">77</td><td class="data-cell" data-col-index="14">+46.7%</td></tr>
+<tr data-row-key="[&quot;中信日導&quot;,&quot;00954.TW&quot;]" data-row-index="57">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00954.TW" target="gsrLinkWindow">中信日導</a></td><td class="data-cell" data-col-index="1">00954.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">37,000</td><td class="data-cell" data-col-index="5">19.60</td><td class="data-cell" data-col-index="6">725,200</td><td class="data-cell" data-col-index="7">2026-08-05</td><td class="data-cell" data-col-index="8">6</td><td class="data-cell" data-col-index="9">0.83</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">4.55</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.11%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.77)">+88.6%</td></tr>
+<tr data-row-key="[&quot;漢磊&quot;,&quot;3707.TWO&quot;]" data-row-index="58">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#3707.TWO" target="gsrLinkWindow">漢磊</a></td><td class="data-cell" data-col-index="1">3707.TWO</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">65.60</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">1.01</td><td class="data-cell" data-col-index="10">1</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">7.38</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.11%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.53)">+54.9%</td></tr>
+<tr data-row-key="[&quot;台泥&quot;,&quot;1101.TW&quot;]" data-row-index="59">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1101.TW" target="gsrLinkWindow">台泥</a></td><td class="data-cell" data-col-index="1">1101.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">24.25</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">0.62</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">2.16</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.08%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.45)">13</td><td class="data-cell" data-col-index="14">+47.3%</td></tr>
+<tr data-row-key="[&quot;大同&quot;,&quot;2371.TW&quot;]" data-row-index="60">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2371.TW" target="gsrLinkWindow">大同</a></td><td class="data-cell" data-col-index="1">2371.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">26.35</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">0.92</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">3.36</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.08%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+16.9%</td></tr>
+<tr data-row-key="[&quot;元大台灣高息低波&quot;,&quot;00713.TW&quot;]" data-row-index="61">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00713.TW" target="gsrLinkWindow">元大台灣高息低波</a></td><td class="data-cell" data-col-index="1">00713.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">60.85</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.48</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">1.10</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.06%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">149</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.74)">+84.8%</td></tr>
+<tr data-row-key="[&quot;建大&quot;,&quot;2106.TW&quot;]" data-row-index="62">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2106.TW" target="gsrLinkWindow">建大</a></td><td class="data-cell" data-col-index="1">2106.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">17.55</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">-0.37</td><td class="data-cell" data-col-index="10">2</td><td class="data-cell" data-col-index="11">2.74</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.04%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">38</td><td class="data-cell" data-col-index="14">+37.0%</td></tr>
+<tr data-row-key="[&quot;美時&quot;,&quot;1795.TW&quot;]" data-row-index="63">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1795.TW" target="gsrLinkWindow">美時</a></td><td class="data-cell" data-col-index="1">1795.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">180.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.08</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">3.56</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.03%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+33.1%</td></tr>
+<tr data-row-key="[&quot;統一&quot;,&quot;1216.TW&quot;]" data-row-index="64">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1216.TW" target="gsrLinkWindow">統一</a></td><td class="data-cell" data-col-index="1">1216.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">75.80</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.43</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">1.98</td><td class="data-cell" data-col-index="12" style="background-color: #ffcdd2">0.03%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">64</td><td class="data-cell" data-col-index="14">+41.9%</td></tr>
+<tr data-row-key="[&quot;山隆&quot;,&quot;2616.TW&quot;]" data-row-index="65">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2616.TW" target="gsrLinkWindow">山隆</a></td><td class="data-cell" data-col-index="1">2616.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">13.40</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.22</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">1.62</td><td class="data-cell" data-col-index="12">-0.01%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.45)">13</td><td class="data-cell" data-col-index="14">+31.5%</td></tr>
+<tr data-row-key="[&quot;遠東新&quot;,&quot;1402.TW&quot;]" data-row-index="66">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1402.TW" target="gsrLinkWindow">遠東新</a></td><td class="data-cell" data-col-index="1">1402.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">27.10</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">0.23</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">2.45</td><td class="data-cell" data-col-index="12">-0.03%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">48</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.6)">+63.6%</td></tr>
+<tr data-row-key="[&quot;寶成&quot;,&quot;9904.TW&quot;]" data-row-index="67">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#9904.TW" target="gsrLinkWindow">寶成</a></td><td class="data-cell" data-col-index="1">9904.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">25.25</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-06-15</td><td class="data-cell" data-col-index="8" style="background-color: #ffcdd2">43</td><td class="data-cell" data-col-index="9" style="background-color: #e57373">2.10</td><td class="data-cell" data-col-index="10">1</td><td class="data-cell" data-col-index="11">1.82</td><td class="data-cell" data-col-index="12">-0.04%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+37.0%</td></tr>
+<tr data-row-key="[&quot;中信中國&quot;,&quot;00882.TW&quot;]" data-row-index="68">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00882.TW" target="gsrLinkWindow">中信中國</a></td><td class="data-cell" data-col-index="1">00882.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">14.91</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">-0.07</td><td class="data-cell" data-col-index="10">1</td><td class="data-cell" data-col-index="11">1.22</td><td class="data-cell" data-col-index="12">-0.05%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.31)">7</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.64)">+70.1%</td></tr>
+<tr data-row-key="[&quot;國泰電動車&quot;,&quot;00893.TW&quot;]" data-row-index="69">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#00893.TW" target="gsrLinkWindow">國泰電動車</a></td><td class="data-cell" data-col-index="1">00893.TW</td><td class="data-cell" data-col-index="2">V</td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">44.07</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-27</td><td class="data-cell" data-col-index="8">13</td><td class="data-cell" data-col-index="9">0.72</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">1.99</td><td class="data-cell" data-col-index="12">-0.05%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.75)">+85.3%</td></tr>
+<tr data-row-key="[&quot;卜蜂&quot;,&quot;1215.TW&quot;]" data-row-index="70">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1215.TW" target="gsrLinkWindow">卜蜂</a></td><td class="data-cell" data-col-index="1">1215.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">107.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.45</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">2.33</td><td class="data-cell" data-col-index="12">-0.08%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+42.9%</td></tr>
+<tr data-row-key="[&quot;漢翔&quot;,&quot;2634.TW&quot;]" data-row-index="71">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2634.TW" target="gsrLinkWindow">漢翔</a></td><td class="data-cell" data-col-index="1">2634.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">70.60</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-21</td><td class="data-cell" data-col-index="8">18</td><td class="data-cell" data-col-index="9" style="background-color: #e57373">1.71</td><td class="data-cell" data-col-index="10">1</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">5.07</td><td class="data-cell" data-col-index="12">-0.08%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">35</td><td class="data-cell" data-col-index="14">+39.1%</td></tr>
+<tr data-row-key="[&quot;正新&quot;,&quot;2105.TW&quot;]" data-row-index="72">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2105.TW" target="gsrLinkWindow">正新</a></td><td class="data-cell" data-col-index="1">2105.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">30.40</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.02</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">2.63</td><td class="data-cell" data-col-index="12">-0.11%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.5)">+50.5%</td></tr>
+<tr data-row-key="[&quot;華紙&quot;,&quot;1905.TW&quot;]" data-row-index="73">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1905.TW" target="gsrLinkWindow">華紙</a></td><td class="data-cell" data-col-index="1">1905.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">13.70</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">0.79</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">4.06</td><td class="data-cell" data-col-index="12">-0.17%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.54)">+56.0%</td></tr>
+<tr data-row-key="[&quot;宏達電&quot;,&quot;2498.TW&quot;]" data-row-index="74">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2498.TW" target="gsrLinkWindow">宏達電</a></td><td class="data-cell" data-col-index="1">2498.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">40.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-12</td><td class="data-cell" data-col-index="8">2</td><td class="data-cell" data-col-index="9">0.50</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">3.71</td><td class="data-cell" data-col-index="12">-0.17%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+23.9%</td></tr>
+<tr data-row-key="[&quot;大成&quot;,&quot;1210.TW&quot;]" data-row-index="75">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1210.TW" target="gsrLinkWindow">大成</a></td><td class="data-cell" data-col-index="1">1210.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">51.90</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">-0.42</td><td class="data-cell" data-col-index="10">11</td><td class="data-cell" data-col-index="11">1.97</td><td class="data-cell" data-col-index="12">-0.23%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">42</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.52)">+53.3%</td></tr>
+<tr data-row-key="[&quot;星宇航空&quot;,&quot;2646.TW&quot;]" data-row-index="76">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2646.TW" target="gsrLinkWindow">星宇航空</a></td><td class="data-cell" data-col-index="1">2646.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">20.40</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">-0.44</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11">1.94</td><td class="data-cell" data-col-index="12">-0.28%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">39</td><td class="data-cell" data-col-index="14">+24.5%</td></tr>
+<tr data-row-key="[&quot;敘豐&quot;,&quot;3485.TWO&quot;]" data-row-index="77">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#3485.TWO" target="gsrLinkWindow">敘豐</a></td><td class="data-cell" data-col-index="1">3485.TWO</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">207.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.34</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">8.36</td><td class="data-cell" data-col-index="12">-0.32%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.73)">+83.2%</td></tr>
+<tr data-row-key="[&quot;國巨&quot;,&quot;2327.TW&quot;]" data-row-index="78">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2327.TW" target="gsrLinkWindow">國巨</a></td><td class="data-cell" data-col-index="1">2327.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">622.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">0.72</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">9.30</td><td class="data-cell" data-col-index="12">-0.41%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.77)">+88.0%</td></tr>
+<tr data-row-key="[&quot;統一超&quot;,&quot;2912.TW&quot;]" data-row-index="79">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#2912.TW" target="gsrLinkWindow">統一超</a></td><td class="data-cell" data-col-index="1">2912.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">214.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">-0.19</td><td class="data-cell" data-col-index="10">12</td><td class="data-cell" data-col-index="11">2.18</td><td class="data-cell" data-col-index="12">-0.44%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.83)">29</td><td class="data-cell" data-col-index="14">+40.2%</td></tr>
+<tr data-row-key="[&quot;元太&quot;,&quot;8069.TWO&quot;]" data-row-index="80">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#8069.TWO" target="gsrLinkWindow">元太</a></td><td class="data-cell" data-col-index="1">8069.TWO</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">165.50</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-13</td><td class="data-cell" data-col-index="8">1</td><td class="data-cell" data-col-index="9">-0.32</td><td class="data-cell" data-col-index="10">5</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">6.97</td><td class="data-cell" data-col-index="12">-0.47%</td><td class="data-cell" data-col-index="13"></td><td class="data-cell" data-col-index="14">+26.1%</td></tr>
+<tr data-row-key="[&quot;台塑&quot;,&quot;1301.TW&quot;]" data-row-index="81">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#1301.TW" target="gsrLinkWindow">台塑</a></td><td class="data-cell" data-col-index="1">1301.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3"></td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">60.00</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-07-27</td><td class="data-cell" data-col-index="8">14</td><td class="data-cell" data-col-index="9">0.77</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11">4.79</td><td class="data-cell" data-col-index="12">-0.63%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">37</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.73)">+82.6%</td></tr>
+<tr data-row-key="[&quot;中美晶&quot;,&quot;5483.TWO&quot;]" data-row-index="82">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#5483.TWO" target="gsrLinkWindow">中美晶</a></td><td class="data-cell" data-col-index="1">5483.TWO</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4">2,000</td><td class="data-cell" data-col-index="5">188.00</td><td class="data-cell" data-col-index="6">376,000</td><td class="data-cell" data-col-index="7">2026-07-27</td><td class="data-cell" data-col-index="8">14</td><td class="data-cell" data-col-index="9">0.52</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">7.98</td><td class="data-cell" data-col-index="12">-1.16%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">82</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.66)">+72.3%</td></tr>
+<tr data-row-key="[&quot;台塑化&quot;,&quot;6505.TW&quot;]" data-row-index="83">
+        <td class="control-cell">
+          <span class="drag-handle" title="Drag to reorder">⋮⋮</span>
+          <button class="hide-btn" type="button" title="Hide row">✕</button>
+        </td>
+        <td class="data-cell" data-col-index="0"><a href="https://countchu.github.io/Dashboard/ma-bbands-html/stock-ma-bbands.html#6505.TW" target="gsrLinkWindow">台塑化</a></td><td class="data-cell" data-col-index="1">6505.TW</td><td class="data-cell" data-col-index="2"></td><td class="data-cell" data-col-index="3">V</td><td class="data-cell" data-col-index="4"></td><td class="data-cell" data-col-index="5">70.90</td><td class="data-cell" data-col-index="6"></td><td class="data-cell" data-col-index="7">2026-08-11</td><td class="data-cell" data-col-index="8">3</td><td class="data-cell" data-col-index="9">0.25</td><td class="data-cell" data-col-index="10">0</td><td class="data-cell" data-col-index="11" style="background-color: #e57373">5.76</td><td class="data-cell" data-col-index="12">-1.22%</td><td class="data-cell" data-col-index="13" style="background-color: rgba(255, 0, 0, 0.85)">37</td><td class="data-cell" data-col-index="14" style="background-color: rgba(255, 0, 0, 0.59)">+62.5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+  <script>
+    const INDEX_COLUMNS = ["stockName", "stockId"];
+    const JSON_FILENAME = "tech-rank-stock-台股-sortable.json";
+    const WINDOW_NAME = 'gsrLinkWindow';
+    const tbody = document.getElementById('tableBody');
+    const visibleCountEl = document.getElementById('visible-count');
+    const hiddenCountEl = document.getElementById('hidden-count');
+    const saveBtn = document.getElementById('saveBtn');
+    const loadBtn = document.getElementById('loadBtn');
+    const showAllBtn = document.getElementById('showAllBtn');
+    const fileInput = document.getElementById('fileInput');
+
+    function getRowKey(row) {
+      const attributeKey = row.getAttribute('data-row-key');
+      if (attributeKey) return attributeKey;
+      const values = INDEX_COLUMNS.map((col) => {
+        const index = ['stockName', 'stockId', 'isEtf', 'hold', 'unit', 'price', 'nav', 'brkDate', 'brkDays', 'pb1', 'pb1Days', 'natr20', 'trendVel', 'bullish', 'bullRate'].indexOf(col);
+        if (index < 0) return '';
+        const cell = row.querySelectorAll('td.data-cell')[index];
+        return cell ? cell.textContent.trim() : '';
+      });
+      return JSON.stringify(values);
+    }
+
+    function updateCounts() {
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const visible = rows.filter((row) => !row.classList.contains('hidden')).length;
+      const hidden = rows.length - visible;
+      visibleCountEl.textContent = visible;
+      hiddenCountEl.textContent = hidden;
+    }
+
+    function makeRowKeyFromValues(values) {
+      return JSON.stringify(values, null, 0);
+    }
+
+    function getSavedRowKey(row) {
+      if (Array.isArray(row)) return makeRowKeyFromValues(row);
+      if (row && typeof row === 'object') {
+        return makeRowKeyFromValues(INDEX_COLUMNS.map((col) => row[col] ?? ''));
+      }
+      return '';
+    }
+
+    function hideRow(row) {
+      row.classList.add('hidden');
+      updateCounts();
+    }
+
+    tbody.addEventListener('click', (event) => {
+      const link = event.target.closest('a');
+      if (link) {
+        event.preventDefault();
+        window.open(link.href, WINDOW_NAME, 'width=980,height=720');
+        return;
+      }
+      const cell = event.target.closest('td.data-cell');
+      if (!cell) return;
+      cell.classList.toggle('hl');
+    });
+
+    tbody.addEventListener('click', (event) => {
+      const btn = event.target.closest('button.hide-btn');
+      if (!btn) return;
+      const row = btn.closest('tr');
+      if (row) hideRow(row);
+    });
+
+    saveBtn.addEventListener('click', () => {
+      const visibleRows = Array.from(tbody.querySelectorAll('tr')).filter((row) => !row.classList.contains('hidden'));
+      const rowsPayload = visibleRows.map((row) => {
+        const values = INDEX_COLUMNS.map((col) => {
+          const idx = ['stockName', 'stockId', 'isEtf', 'hold', 'unit', 'price', 'nav', 'brkDate', 'brkDays', 'pb1', 'pb1Days', 'natr20', 'trendVel', 'bullish', 'bullRate'].indexOf(col);
+          const cell = row.querySelectorAll('td.data-cell')[idx];
+          return cell ? cell.textContent.trim() : '';
+        });
+        return Object.fromEntries(INDEX_COLUMNS.map((col, index) => [col, values[index]]));
+      });
+      const highlighted = Array.from(tbody.querySelectorAll('td.hl')).map((cell) => {
+        const row = cell.closest('tr');
+        const colIndex = Number(cell.getAttribute('data-col-index'));
+        return [row ? getRowKey(row) : '', colIndex];
+      }).filter(([rowKey]) => rowKey);
+      const payload = { headers: INDEX_COLUMNS, rows: rowsPayload, highlighted };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = JSON_FILENAME;
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+
+    loadBtn.addEventListener('click', () => fileInput.click());
+    showAllBtn.addEventListener('click', () => {
+      tbody.querySelectorAll('tr.hidden').forEach((row) => row.classList.remove('hidden'));
+      updateCounts();
+    });
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const payload = JSON.parse(reader.result);
+          restoreFromPayload(payload);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      reader.readAsText(file);
+      fileInput.value = '';
+    });
+
+    function restoreFromPayload(payload) {
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.forEach((row) => row.classList.remove('hidden'));
+      tbody.querySelectorAll('td.hl').forEach((cell) => cell.classList.remove('hl'));
+      const savedRows = Array.isArray(payload.rows) ? payload.rows : [];
+      const savedKeys = new Set(savedRows.map((row) => getSavedRowKey(row)));
+      const hasSavedRows = savedRows.length > 0;
+
+      const order = savedRows.map((row) => getSavedRowKey(row));
+      const rowMap = new Map(rows.map((row) => [getRowKey(row), row]));
+      const orderedRows = [];
+      order.forEach((rowKey) => {
+        const row = rowMap.get(rowKey);
+        if (row) {
+          orderedRows.push(row);
+          rowMap.delete(rowKey);
+        }
+      });
+      rowMap.forEach((row) => orderedRows.push(row));
+      orderedRows.forEach((row) => tbody.appendChild(row));
+
+      if (hasSavedRows) {
+        rows.forEach((row) => {
+          const rowKey = getRowKey(row);
+          if (!savedKeys.has(rowKey)) {
+            row.classList.add('hidden');
+          }
+        });
+      }
+
+      (payload.highlighted || []).forEach(([rowKey, columnIndex]) => {
+        const row = rows.find((item) => getRowKey(item) === rowKey);
+        if (!row) return;
+        const cell = row.querySelectorAll('td.data-cell')[Number(columnIndex)];
+        if (cell) cell.classList.add('hl');
+      });
+      updateCounts();
+    }
+
+    fetch(JSON_FILENAME, { cache: 'no-store' })
+      .then((response) => response.ok ? response.json() : null)
+      .then((payload) => {
+        if (payload) restoreFromPayload(payload);
+      })
+      .catch(() => {});
+
+    new Sortable(tbody, {
+      handle: '.drag-handle',
+      animation: 150,
+      ghostClass: 'sortable-ghost',
+      draggable: 'tr'
+    });
+
+    updateCounts();
+  </script>
+</body>
+</html>
