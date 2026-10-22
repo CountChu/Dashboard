@@ -1,0 +1,3582 @@
+<meta charset="utf-8" />
+
+<style>
+    .table-container {
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead th {
+        position: -webkit-sticky;
+        /* for Safari */
+        position: sticky;
+        top: 0;
+        background-color: #f2f2f2;
+        z-index: 1;
+    }
+
+    td,
+    th {
+        font-family: monospace;
+        font-size: 14px;
+        text-align: right;
+        vertical-align: top;
+        padding: 4px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<div class="table-container">
+    <table border="1">
+        <thead>
+            <tr style="text-align: right;">
+                <th>name</th>
+                <th>id</th>
+                <th>date</th>
+                <th>price</th>
+                <th>change</th>
+                <th>pctChange</th>
+                <th>pctStdDev5</th>
+                <th>pctStdDev10</th>
+                <th>pctStdDev20</th>
+                <th>pctStdDev30</th>
+                <th>sma5</th>
+                <th>stddev5</th>
+                <th>atr5</th>
+                <th>atr20</th>
+                <th>natr5</th>
+                <th>natr20</th>
+                <th>bias5</th>
+                <th>bias20</th>
+                <th>brkDate</th>
+                <th>brkDays</th>
+                <th>dnStk</th>
+                <th>pb1</th>
+                <th>pb1Days</th>
+                <th>sma20</th>
+                <th>pb2</th>
+                <th>bw2</th>
+                <th>total</th>
+                <th>score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td >元大台灣</td>
+                <td >0050.TW</td>
+                <td >2026-10-22</td>
+                <td >106.90</td>
+                <td >-0.35</td>
+                <td >-0.3%</td>
+                <td >1.5%</td>
+                <td >1.2%</td>
+                <td >1.3%</td>
+                <td >1.2%</td>
+                <td >108.0</td>
+                <td >0.8</td>
+                <td >1.90</td>
+                <td >1.80</td>
+                <td >1.8</td>
+                <td >1.7</td>
+                <td >-1.1%</td>
+                <td >-4.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.43</td>
+                <td >-5</td>
+                <td >112.05</td>
+                <td style="background-color: #dcedc8;">+0.04</td>
+                <td >14.3</td>
+                <td >14.3</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >元大中型100</td>
+                <td >0051.TW</td>
+                <td >2026-10-22</td>
+                <td >147.20</td>
+                <td >-0.30</td>
+                <td >-0.2%</td>
+                <td >1.8%</td>
+                <td >1.6%</td>
+                <td >1.3%</td>
+                <td >1.3%</td>
+                <td >148.6</td>
+                <td >1.3</td>
+                <td >3.22</td>
+                <td >2.65</td>
+                <td >2.2</td>
+                <td >1.8</td>
+                <td >-0.9%</td>
+                <td >-1.7%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.04</td>
+                <td >-1</td>
+                <td >149.79</td>
+                <td style="background-color: #dcedc8;">+0.23</td>
+                <td >12.6</td>
+                <td >12.6</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >富邦科技</td>
+                <td >0052.TW</td>
+                <td >2026-10-22</td>
+                <td >61.80</td>
+                <td >-0.45</td>
+                <td >-0.7%</td>
+                <td >1.6%</td>
+                <td >1.3%</td>
+                <td >1.3%</td>
+                <td >1.3%</td>
+                <td >62.6</td>
+                <td >0.6</td>
+                <td >1.23</td>
+                <td >1.13</td>
+                <td >2.0</td>
+                <td >1.8</td>
+                <td >-1.3%</td>
+                <td >-5.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.46</td>
+                <td >-5</td>
+                <td >65.19</td>
+                <td style="background-color: #dcedc8;">+0.02</td>
+                <td >15.7</td>
+                <td >15.7</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >元大高股息</td>
+                <td >0056.TW</td>
+                <td >2026-10-22</td>
+                <td >56.30</td>
+                <td >-1.15</td>
+                <td >-2.0%</td>
+                <td >1.2%</td>
+                <td >1.3%</td>
+                <td >1.0%</td>
+                <td >1.0%</td>
+                <td >57.8</td>
+                <td >0.8</td>
+                <td >1.06</td>
+                <td >0.89</td>
+                <td >1.9</td>
+                <td >1.6</td>
+                <td >-2.5%</td>
+                <td >-2.3%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.25</td>
+                <td >-1</td>
+                <td >57.64</td>
+                <td style="background-color: #dcedc8;">+0.13</td>
+                <td >12.8</td>
+                <td >12.8</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >富邦台50</td>
+                <td >006208.TW</td>
+                <td >2026-10-22</td>
+                <td >244.85</td>
+                <td >-0.45</td>
+                <td >-0.2%</td>
+                <td >1.4%</td>
+                <td >1.1%</td>
+                <td >1.2%</td>
+                <td >1.2%</td>
+                <td >247.7</td>
+                <td >2.3</td>
+                <td >4.21</td>
+                <td >4.01</td>
+                <td >1.7</td>
+                <td >1.6</td>
+                <td >-1.1%</td>
+                <td >-4.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.44</td>
+                <td >-4</td>
+                <td >256.54</td>
+                <td style="background-color: #dcedc8;">+0.03</td>
+                <td >14.0</td>
+                <td >14.0</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >元大正2</td>
+                <td >00631L.TW</td>
+                <td >2026-10-22</td>
+                <td >35.61</td>
+                <td >-0.26</td>
+                <td >-0.7%</td>
+                <td >2.6%</td>
+                <td >2.3%</td>
+                <td >2.4%</td>
+                <td >2.3%</td>
+                <td >36.5</td>
+                <td >0.6</td>
+                <td >1.22</td>
+                <td >1.16</td>
+                <td >3.4</td>
+                <td >3.3</td>
+                <td >-2.3%</td>
+                <td >-8.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.43</td>
+                <td >-4</td>
+                <td >38.98</td>
+                <td style="background-color: #dcedc8;">+0.04</td>
+                <td >27.3</td>
+                <td >27.3</td>
+                <td >5</td>
+            </tr>
+            <tr>
+                <td >元大日經225</td>
+                <td >00661.TW</td>
+                <td >2026-10-22</td>
+                <td >82.15</td>
+                <td >-1.00</td>
+                <td >-1.2%</td>
+                <td >2.2%</td>
+                <td >1.7%</td>
+                <td >1.9%</td>
+                <td >1.7%</td>
+                <td >83.8</td>
+                <td >1.1</td>
+                <td >1.83</td>
+                <td >1.62</td>
+                <td >2.2</td>
+                <td >2.0</td>
+                <td >-2.0%</td>
+                <td >-5.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.35</td>
+                <td >-3</td>
+                <td >86.89</td>
+                <td style="background-color: #dcedc8;">+0.07</td>
+                <td >19.2</td>
+                <td >19.2</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >富邦公司治理</td>
+                <td >00692.TW</td>
+                <td >2026-10-22</td>
+                <td >92.65</td>
+                <td >+0.20</td>
+                <td >+0.2%</td>
+                <td >1.3%</td>
+                <td >1.1%</td>
+                <td >1.2%</td>
+                <td >1.2%</td>
+                <td >93.5</td>
+                <td >0.8</td>
+                <td >1.62</td>
+                <td >1.51</td>
+                <td >1.8</td>
+                <td >1.6</td>
+                <td >-0.9%</td>
+                <td >-4.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.37</td>
+                <td >-4</td>
+                <td >96.55</td>
+                <td style="background-color: #dcedc8;">+0.06</td>
+                <td >13.0</td>
+                <td >13.0</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >元大台灣高息低波</td>
+                <td >00713.TW</td>
+                <td >2026-10-22</td>
+                <td >65.90</td>
+                <td >+1.05</td>
+                <td >+1.6%</td>
+                <td >1.1%</td>
+                <td >0.8%</td>
+                <td >0.8%</td>
+                <td >0.7%</td>
+                <td >65.5</td>
+                <td >0.4</td>
+                <td >0.77</td>
+                <td >0.63</td>
+                <td >1.2</td>
+                <td >0.9</td>
+                <td >+0.6%</td>
+                <td >+3.1%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.44</td>
+                <td >1</td>
+                <td >63.91</td>
+                <td style="background-color: #ffcdd2;">+0.97</td>
+                <td >9.2</td>
+                <td >9.2</td>
+                <td >1</td>
+            </tr>
+            <tr>
+                <td >富邦臺灣中小</td>
+                <td >00733.TW</td>
+                <td >2026-10-22</td>
+                <td >71.40</td>
+                <td >-0.25</td>
+                <td >-0.4%</td>
+                <td >2.0%</td>
+                <td >2.3%</td>
+                <td >2.0%</td>
+                <td >1.9%</td>
+                <td >73.5</td>
+                <td >2.1</td>
+                <td >2.97</td>
+                <td >2.17</td>
+                <td >4.2</td>
+                <td >3.0</td>
+                <td >-2.9%</td>
+                <td >-3.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.13</td>
+                <td >0</td>
+                <td >73.99</td>
+                <td style="background-color: #dcedc8;">+0.32</td>
+                <td >21.8</td>
+                <td >21.8</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >統一FANG</td>
+                <td >00757.TW</td>
+                <td >2026-10-22</td>
+                <td >142.55</td>
+                <td >-1.55</td>
+                <td >-1.1%</td>
+                <td >1.7%</td>
+                <td >1.4%</td>
+                <td >1.2%</td>
+                <td >1.2%</td>
+                <td >144.2</td>
+                <td >1.2</td>
+                <td >2.08</td>
+                <td >1.75</td>
+                <td >1.5</td>
+                <td >1.2</td>
+                <td >-1.2%</td>
+                <td >-1.4%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #aed581;">-0.07</td>
+                <td >-1</td>
+                <td >144.63</td>
+                <td style="background-color: #dcedc8;">+0.21</td>
+                <td >10.7</td>
+                <td >10.7</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >國泰永續高股息</td>
+                <td >00878.TW</td>
+                <td >2026-10-22</td>
+                <td >35.27</td>
+                <td >+0.39</td>
+                <td >+1.1%</td>
+                <td >1.2%</td>
+                <td >0.9%</td>
+                <td >0.7%</td>
+                <td >0.6%</td>
+                <td >35.2</td>
+                <td >0.2</td>
+                <td >0.49</td>
+                <td >0.43</td>
+                <td >1.4</td>
+                <td >1.2</td>
+                <td >+0.2%</td>
+                <td >+0.4%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.90</td>
+                <td >0</td>
+                <td >35.11</td>
+                <td style="background-color: #ffcdd2;">+0.70</td>
+                <td >6.7</td>
+                <td >6.7</td>
+                <td >1</td>
+            </tr>
+            <tr>
+                <td >國泰台灣科技龍頭</td>
+                <td >00881.TW</td>
+                <td >2026-10-22</td>
+                <td >48.80</td>
+                <td >-0.31</td>
+                <td >-0.6%</td>
+                <td >1.6%</td>
+                <td >1.4%</td>
+                <td >1.5%</td>
+                <td >1.5%</td>
+                <td >49.5</td>
+                <td >0.5</td>
+                <td >1.08</td>
+                <td >1.07</td>
+                <td >2.2</td>
+                <td >2.2</td>
+                <td >-1.4%</td>
+                <td >-6.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.47</td>
+                <td >-5</td>
+                <td >51.99</td>
+                <td style="background-color: #dcedc8;">+0.01</td>
+                <td >17.9</td>
+                <td >17.9</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >中信中國</td>
+                <td >00882.TW</td>
+                <td >2026-10-22</td>
+                <td >14.78</td>
+                <td >-0.32</td>
+                <td >-2.1%</td>
+                <td >1.2%</td>
+                <td >1.1%</td>
+                <td >0.8%</td>
+                <td >0.7%</td>
+                <td >15.0</td>
+                <td >0.1</td>
+                <td >0.20</td>
+                <td >0.16</td>
+                <td >1.4</td>
+                <td >1.1</td>
+                <td >-1.8%</td>
+                <td >-0.9%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td >+0.08</td>
+                <td >0</td>
+                <td >14.92</td>
+                <td style="background-color: #dcedc8;">+0.29</td>
+                <td >8.8</td>
+                <td >8.8</td>
+                <td >1</td>
+            </tr>
+            <tr>
+                <td >富邦越南</td>
+                <td >00885.TW</td>
+                <td >2026-10-22</td>
+                <td >18.13</td>
+                <td >+0.57</td>
+                <td >+3.2%</td>
+                <td >1.7%</td>
+                <td >1.2%</td>
+                <td >1.0%</td>
+                <td >0.9%</td>
+                <td >17.8</td>
+                <td >0.2</td>
+                <td >0.27</td>
+                <td >0.22</td>
+                <td >1.5</td>
+                <td >1.2</td>
+                <td >+2.1%</td>
+                <td >+1.5%</td>
+                <td >2026-09-23</td>
+                <td >18</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.08</td>
+                <td >1</td>
+                <td >17.86</td>
+                <td style="background-color: #ffcdd2;">+0.79</td>
+                <td >11.0</td>
+                <td >11.0</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >富邦台灣半導體</td>
+                <td >00892.TW</td>
+                <td >2026-10-22</td>
+                <td >39.86</td>
+                <td >-0.25</td>
+                <td >-0.6%</td>
+                <td >2.3%</td>
+                <td >1.9%</td>
+                <td >1.6%</td>
+                <td >1.8%</td>
+                <td >40.5</td>
+                <td >0.5</td>
+                <td >1.11</td>
+                <td >0.99</td>
+                <td >2.8</td>
+                <td >2.5</td>
+                <td >-1.7%</td>
+                <td >-6.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.57</td>
+                <td >-5</td>
+                <td >42.69</td>
+                <td style="background-color: #aed581;">-0.04</td>
+                <td >21.2</td>
+                <td >21.2</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >國泰台灣領袖50</td>
+                <td >00922.TW</td>
+                <td >2026-10-22</td>
+                <td >39.40</td>
+                <td >-0.16</td>
+                <td >-0.4%</td>
+                <td >2.6%</td>
+                <td >2.0%</td>
+                <td >1.9%</td>
+                <td >1.6%</td>
+                <td >40.8</td>
+                <td >1.4</td>
+                <td >1.08</td>
+                <td >0.84</td>
+                <td >2.8</td>
+                <td >2.1</td>
+                <td >-3.3%</td>
+                <td >-9.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.65</td>
+                <td >-5</td>
+                <td >43.3</td>
+                <td style="background-color: #aed581;">-0.07</td>
+                <td >25.3</td>
+                <td >25.3</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >國泰電動車</td>
+                <td >00893.TW</td>
+                <td >2026-10-22</td>
+                <td >43.27</td>
+                <td >-0.13</td>
+                <td >-0.3%</td>
+                <td >1.8%</td>
+                <td >1.8%</td>
+                <td >1.8%</td>
+                <td >1.6%</td>
+                <td >43.8</td>
+                <td >0.4</td>
+                <td >0.88</td>
+                <td >0.77</td>
+                <td >2.0</td>
+                <td >1.8</td>
+                <td >-1.2%</td>
+                <td >-5.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.39</td>
+                <td >-3</td>
+                <td >45.66</td>
+                <td style="background-color: #dcedc8;">+0.06</td>
+                <td >17.2</td>
+                <td >17.2</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >太空衛星</td>
+                <td >00910.TW</td>
+                <td >2026-10-22</td>
+                <td >49.94</td>
+                <td >-0.06</td>
+                <td >-0.1%</td>
+                <td >3.1%</td>
+                <td >2.3%</td>
+                <td >2.0%</td>
+                <td >2.0%</td>
+                <td >50.5</td>
+                <td >0.7</td>
+                <td >1.21</td>
+                <td >1.21</td>
+                <td >2.4</td>
+                <td >2.4</td>
+                <td >-1.1%</td>
+                <td >-9.8%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.32</td>
+                <td >-9</td>
+                <td >55.35</td>
+                <td style="background-color: #dcedc8;">+0.09</td>
+                <td >25.1</td>
+                <td >25.1</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >復華日本龍頭</td>
+                <td >00949.TW</td>
+                <td >2026-10-22</td>
+                <td >22.88</td>
+                <td >+0.13</td>
+                <td >+0.6%</td>
+                <td >1.3%</td>
+                <td >1.0%</td>
+                <td >0.9%</td>
+                <td >0.9%</td>
+                <td >22.8</td>
+                <td >0.2</td>
+                <td >0.31</td>
+                <td >0.27</td>
+                <td >1.4</td>
+                <td >1.2</td>
+                <td >+0.5%</td>
+                <td >+2.4%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #e57373;">+1.32</td>
+                <td >15</td>
+                <td >22.35</td>
+                <td style="background-color: #ffcdd2;">+0.91</td>
+                <td >9.4</td>
+                <td >9.4</td>
+                <td >1</td>
+            </tr>
+            <tr>
+                <td >中信日導</td>
+                <td >00954.TW</td>
+                <td >2026-10-22</td>
+                <td >16.40</td>
+                <td >-0.74</td>
+                <td >-4.3%</td>
+                <td >2.9%</td>
+                <td >2.7%</td>
+                <td >3.0%</td>
+                <td >3.0%</td>
+                <td >17.4</td>
+                <td >0.6</td>
+                <td >0.67</td>
+                <td >0.61</td>
+                <td >4.1</td>
+                <td >3.7</td>
+                <td >-5.8%</td>
+                <td >-14.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.50</td>
+                <td >-4</td>
+                <td >19.19</td>
+                <td style="background-color: #dcedc8;">+0.00</td>
+                <td >39.7</td>
+                <td >39.7</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >中信日商</td>
+                <td >00955.TWO</td>
+                <td >2026-10-22</td>
+                <td >16.51</td>
+                <td >+0.14</td>
+                <td >+0.9%</td>
+                <td >1.1%</td>
+                <td >1.1%</td>
+                <td >1.1%</td>
+                <td >1.1%</td>
+                <td >16.4</td>
+                <td >0.1</td>
+                <td >0.23</td>
+                <td >0.23</td>
+                <td >1.4</td>
+                <td >1.4</td>
+                <td >+0.6%</td>
+                <td >+2.5%</td>
+                <td >2026-10-19</td>
+                <td >3</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.29</td>
+                <td >4</td>
+                <td >16.1</td>
+                <td style="background-color: #ffcdd2;">+0.90</td>
+                <td >10.2</td>
+                <td >10.2</td>
+                <td >1</td>
+            </tr>
+            <tr>
+                <td >元大防衛</td>
+                <td >00965.TW</td>
+                <td >2026-10-22</td>
+                <td >24.40</td>
+                <td >-0.08</td>
+                <td >-0.3%</td>
+                <td >1.9%</td>
+                <td >1.4%</td>
+                <td >1.1%</td>
+                <td >1.0%</td>
+                <td >24.6</td>
+                <td >0.2</td>
+                <td >0.37</td>
+                <td >0.32</td>
+                <td >1.5</td>
+                <td >1.3</td>
+                <td >-0.9%</td>
+                <td >-2.8%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >4</td>
+                <td style="background-color: #aed581;">-0.46</td>
+                <td >-3</td>
+                <td >25.1</td>
+                <td style="background-color: #dcedc8;">+0.02</td>
+                <td >11.9</td>
+                <td >11.9</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >統一美國50</td>
+                <td >009811.TW</td>
+                <td >2026-10-22</td>
+                <td >13.70</td>
+                <td >0.00</td>
+                <td ></td>
+                <td >1.0%</td>
+                <td >0.8%</td>
+                <td >0.7%</td>
+                <td >0.7%</td>
+                <td >13.7</td>
+                <td >0.1</td>
+                <td >0.11</td>
+                <td >0.11</td>
+                <td >0.8</td>
+                <td >0.8</td>
+                <td >-0.1%</td>
+                <td >+0.3%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.67</td>
+                <td >0</td>
+                <td >13.66</td>
+                <td style="background-color: #ffcdd2;">+0.58</td>
+                <td >5.2</td>
+                <td >5.2</td>
+                <td >0</td>
+            </tr>
+            <tr>
+                <td >凱基台灣50</td>
+                <td >009816.TW</td>
+                <td >2026-10-22</td>
+                <td >15.93</td>
+                <td >0.00</td>
+                <td ></td>
+                <td >1.1%</td>
+                <td >1.0%</td>
+                <td >1.1%</td>
+                <td >1.1%</td>
+                <td >16.1</td>
+                <td >0.1</td>
+                <td >0.24</td>
+                <td >0.24</td>
+                <td >1.5</td>
+                <td >1.5</td>
+                <td >-0.8%</td>
+                <td >-3.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.37</td>
+                <td >-3</td>
+                <td >16.52</td>
+                <td style="background-color: #dcedc8;">+0.06</td>
+                <td >11.8</td>
+                <td >11.8</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >台泥</td>
+                <td >1101.TW</td>
+                <td >2026-10-22</td>
+                <td >27.95</td>
+                <td >+1.15</td>
+                <td >+4.3%</td>
+                <td >2.4%</td>
+                <td >2.4%</td>
+                <td >2.4%</td>
+                <td >2.1%</td>
+                <td >27.2</td>
+                <td >0.4</td>
+                <td >0.83</td>
+                <td >0.69</td>
+                <td >3.0</td>
+                <td >2.5</td>
+                <td >+2.8%</td>
+                <td >+7.5%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.48</td>
+                <td >10</td>
+                <td >26.0</td>
+                <td style="background-color: #ffcdd2;">+0.99</td>
+                <td >25.0</td>
+                <td >25.0</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >大成</td>
+                <td >1210.TW</td>
+                <td >2026-10-22</td>
+                <td >51.30</td>
+                <td >+0.20</td>
+                <td >+0.4%</td>
+                <td >0.7%</td>
+                <td >0.5%</td>
+                <td >0.5%</td>
+                <td >0.6%</td>
+                <td >51.4</td>
+                <td >0.3</td>
+                <td >0.44</td>
+                <td >0.58</td>
+                <td >0.8</td>
+                <td >1.1</td>
+                <td >-0.3%</td>
+                <td >-0.6%</td>
+                <td >2026-10-19</td>
+                <td >3</td>
+                <td >0</td>
+                <td >+0.11</td>
+                <td >0</td>
+                <td >51.6</td>
+                <td style="background-color: #dcedc8;">+0.31</td>
+                <td >5.1</td>
+                <td >5.1</td>
+                <td >0</td>
+            </tr>
+            <tr>
+                <td >卜蜂</td>
+                <td >1215.TW</td>
+                <td >2026-10-22</td>
+                <td >107.00</td>
+                <td >+1.50</td>
+                <td >+1.4%</td>
+                <td >1.0%</td>
+                <td >1.0%</td>
+                <td >1.0%</td>
+                <td >1.1%</td>
+                <td >106.5</td>
+                <td >0.5</td>
+                <td >1.53</td>
+                <td >1.73</td>
+                <td >1.4</td>
+                <td >1.6</td>
+                <td >+0.5%</td>
+                <td >+1.1%</td>
+                <td >2026-10-16</td>
+                <td >4</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.09</td>
+                <td >1</td>
+                <td >105.8</td>
+                <td style="background-color: #ffcdd2;">+0.79</td>
+                <td >8.8</td>
+                <td >8.8</td>
+                <td >1</td>
+            </tr>
+            <tr>
+                <td >統一</td>
+                <td >1216.TW</td>
+                <td >2026-10-22</td>
+                <td >79.60</td>
+                <td >+1.20</td>
+                <td >+1.5%</td>
+                <td >1.3%</td>
+                <td >1.1%</td>
+                <td >1.1%</td>
+                <td >1.1%</td>
+                <td >79.3</td>
+                <td >0.5</td>
+                <td >1.67</td>
+                <td >1.32</td>
+                <td >2.1</td>
+                <td >1.7</td>
+                <td >+0.3%</td>
+                <td >+4.8%</td>
+                <td >2026-10-19</td>
+                <td >3</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.28</td>
+                <td >9</td>
+                <td >76.0</td>
+                <td style="background-color: #ffcdd2;">+0.89</td>
+                <td >13.5</td>
+                <td >13.5</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >台塑</td>
+                <td >1301.TW</td>
+                <td >2026-10-22</td>
+                <td >73.80</td>
+                <td >-1.10</td>
+                <td >-1.5%</td>
+                <td >3.3%</td>
+                <td >6.3%</td>
+                <td >4.6%</td>
+                <td >3.9%</td>
+                <td >78.1</td>
+                <td >3.4</td>
+                <td >4.97</td>
+                <td >3.86</td>
+                <td >6.7</td>
+                <td >5.2</td>
+                <td >-5.5%</td>
+                <td >+1.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.55</td>
+                <td >0</td>
+                <td >73.0</td>
+                <td style="background-color: #ffcdd2;">+0.53</td>
+                <td >36.8</td>
+                <td >36.8</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >南亞</td>
+                <td >1303.TW</td>
+                <td >2026-10-22</td>
+                <td >301.00</td>
+                <td >+5.00</td>
+                <td >+1.7%</td>
+                <td >4.3%</td>
+                <td >5.6%</td>
+                <td >4.8%</td>
+                <td >4.2%</td>
+                <td >304.4</td>
+                <td >6.2</td>
+                <td >23.27</td>
+                <td >18.54</td>
+                <td >7.7</td>
+                <td >6.2</td>
+                <td >-1.1%</td>
+                <td >+6.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.77</td>
+                <td >0</td>
+                <td >282.4</td>
+                <td style="background-color: #ffcdd2;">+0.64</td>
+                <td >40.5</td>
+                <td >40.5</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >遠東新</td>
+                <td >1402.TW</td>
+                <td >2026-10-22</td>
+                <td >28.90</td>
+                <td >+0.40</td>
+                <td >+1.4%</td>
+                <td >1.2%</td>
+                <td >1.7%</td>
+                <td >1.3%</td>
+                <td >1.3%</td>
+                <td >29.0</td>
+                <td >0.3</td>
+                <td >0.57</td>
+                <td >0.57</td>
+                <td >2.0</td>
+                <td >2.0</td>
+                <td >-0.4%</td>
+                <td >+1.7%</td>
+                <td >2026-10-16</td>
+                <td >4</td>
+                <td >0</td>
+                <td >+0.92</td>
+                <td >0</td>
+                <td >28.4</td>
+                <td style="background-color: #ffcdd2;">+0.71</td>
+                <td >11.6</td>
+                <td >11.6</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >東元</td>
+                <td >1504.TW</td>
+                <td >2026-10-22</td>
+                <td >69.70</td>
+                <td >+1.40</td>
+                <td >+2.1%</td>
+                <td >1.8%</td>
+                <td >2.1%</td>
+                <td >1.6%</td>
+                <td >1.6%</td>
+                <td >69.2</td>
+                <td >0.5</td>
+                <td >1.97</td>
+                <td >1.83</td>
+                <td >2.8</td>
+                <td >2.6</td>
+                <td >+0.7%</td>
+                <td >-0.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.48</td>
+                <td >0</td>
+                <td >69.74</td>
+                <td style="background-color: #dcedc8;">+0.49</td>
+                <td >13.2</td>
+                <td >13.2</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >美時</td>
+                <td >1795.TW</td>
+                <td >2026-10-22</td>
+                <td >172.50</td>
+                <td >-2.50</td>
+                <td >-1.4%</td>
+                <td >1.3%</td>
+                <td >2.1%</td>
+                <td >1.6%</td>
+                <td >1.5%</td>
+                <td >176.9</td>
+                <td >3.2</td>
+                <td >4.48</td>
+                <td >4.32</td>
+                <td >2.6</td>
+                <td >2.5</td>
+                <td >-2.5%</td>
+                <td >-3.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.55</td>
+                <td >-3</td>
+                <td >178.0</td>
+                <td style="background-color: #aed581;">-0.02</td>
+                <td >17.0</td>
+                <td >17.0</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >台玻</td>
+                <td >1802.TW</td>
+                <td >2026-10-22</td>
+                <td >67.10</td>
+                <td >-0.30</td>
+                <td >-0.4%</td>
+                <td >4.8%</td>
+                <td >5.4%</td>
+                <td >4.0%</td>
+                <td >3.5%</td>
+                <td >66.0</td>
+                <td >1.7</td>
+                <td >5.32</td>
+                <td >3.67</td>
+                <td >7.9</td>
+                <td >5.5</td>
+                <td >+1.6%</td>
+                <td style="background-color: #ffcdd2;">+8.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #e57373;">+1.23</td>
+                <td >4</td>
+                <td >62.09</td>
+                <td style="background-color: #ffcdd2;">+0.86</td>
+                <td >40.8</td>
+                <td >40.8</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >正隆</td>
+                <td >1904.TW</td>
+                <td >2026-10-22</td>
+                <td >24.60</td>
+                <td >+0.20</td>
+                <td >+0.8%</td>
+                <td >1.2%</td>
+                <td >1.5%</td>
+                <td >1.6%</td>
+                <td >1.7%</td>
+                <td >25.0</td>
+                <td >0.5</td>
+                <td >0.50</td>
+                <td >0.60</td>
+                <td >2.0</td>
+                <td >2.4</td>
+                <td >-1.6%</td>
+                <td >-0.9%</td>
+                <td >2026-10-19</td>
+                <td >3</td>
+                <td >0</td>
+                <td >+0.28</td>
+                <td >0</td>
+                <td >24.8</td>
+                <td style="background-color: #dcedc8;">+0.39</td>
+                <td >13.0</td>
+                <td >13.0</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >華紙</td>
+                <td >1905.TW</td>
+                <td >2026-10-22</td>
+                <td >12.80</td>
+                <td >-0.10</td>
+                <td >-0.8%</td>
+                <td >0.9%</td>
+                <td >1.3%</td>
+                <td >1.2%</td>
+                <td >1.3%</td>
+                <td >13.0</td>
+                <td >0.1</td>
+                <td >0.25</td>
+                <td >0.29</td>
+                <td >1.9</td>
+                <td >2.3</td>
+                <td >-1.7%</td>
+                <td >-1.2%</td>
+                <td >2026-10-20</td>
+                <td >2</td>
+                <td >0</td>
+                <td >+0.06</td>
+                <td >0</td>
+                <td >13.0</td>
+                <td style="background-color: #dcedc8;">+0.28</td>
+                <td >11.8</td>
+                <td >11.8</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >永豐餘</td>
+                <td >1907.TW</td>
+                <td >2026-10-22</td>
+                <td >28.20</td>
+                <td >-0.10</td>
+                <td >-0.4%</td>
+                <td >2.0%</td>
+                <td >1.6%</td>
+                <td >1.4%</td>
+                <td >1.3%</td>
+                <td >28.9</td>
+                <td >0.6</td>
+                <td >0.63</td>
+                <td >0.59</td>
+                <td >2.2</td>
+                <td >2.1</td>
+                <td >-2.3%</td>
+                <td >-0.8%</td>
+                <td >2026-10-20</td>
+                <td >2</td>
+                <td >0</td>
+                <td >+0.27</td>
+                <td >0</td>
+                <td >28.4</td>
+                <td style="background-color: #dcedc8;">+0.39</td>
+                <td >13.8</td>
+                <td >13.8</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >中鋼</td>
+                <td >2002.TW</td>
+                <td >2026-10-22</td>
+                <td >19.55</td>
+                <td >-0.05</td>
+                <td >-0.3%</td>
+                <td >1.1%</td>
+                <td >1.0%</td>
+                <td >0.9%</td>
+                <td >0.9%</td>
+                <td >19.5</td>
+                <td >0.1</td>
+                <td >0.27</td>
+                <td >0.26</td>
+                <td >1.4</td>
+                <td >1.3</td>
+                <td >+0.3%</td>
+                <td >+2.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #e57373;">+1.23</td>
+                <td >8</td>
+                <td >19.08</td>
+                <td style="background-color: #ffcdd2;">+0.87</td>
+                <td >9.3</td>
+                <td >9.3</td>
+                <td >1</td>
+            </tr>
+            <tr>
+                <td >上銀</td>
+                <td >2049.TW</td>
+                <td >2026-10-22</td>
+                <td >299.00</td>
+                <td >-1.50</td>
+                <td >-0.5%</td>
+                <td >2.6%</td>
+                <td >2.6%</td>
+                <td >2.4%</td>
+                <td >3.0%</td>
+                <td >305.3</td>
+                <td >5.1</td>
+                <td >12.43</td>
+                <td >14.78</td>
+                <td >4.2</td>
+                <td >4.9</td>
+                <td >-2.1%</td>
+                <td >-8.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.52</td>
+                <td >-5</td>
+                <td >326.8</td>
+                <td style="background-color: #aed581;">-0.01</td>
+                <td >30.2</td>
+                <td >30.2</td>
+                <td >5</td>
+            </tr>
+            <tr>
+                <td >川湖</td>
+                <td >2059.TW</td>
+                <td >2026-10-22</td>
+                <td >9755.00</td>
+                <td >-345.00</td>
+                <td >-3.4%</td>
+                <td >2.6%</td>
+                <td >4.4%</td>
+                <td >4.3%</td>
+                <td >4.1%</td>
+                <td >9890.0</td>
+                <td >139.0</td>
+                <td >521.24</td>
+                <td >630.44</td>
+                <td >5.3</td>
+                <td >6.5</td>
+                <td >-1.4%</td>
+                <td >-14.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #aed581;">-0.15</td>
+                <td >-10</td>
+                <td >11366.0</td>
+                <td style="background-color: #dcedc8;">+0.17</td>
+                <td >42.8</td>
+                <td >42.8</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >正新</td>
+                <td >2105.TW</td>
+                <td >2026-10-22</td>
+                <td >32.00</td>
+                <td >-0.10</td>
+                <td >-0.3%</td>
+                <td >1.3%</td>
+                <td >1.0%</td>
+                <td >0.9%</td>
+                <td >0.9%</td>
+                <td >32.1</td>
+                <td >0.2</td>
+                <td >0.56</td>
+                <td >0.51</td>
+                <td >1.8</td>
+                <td >1.6</td>
+                <td >-0.4%</td>
+                <td >+3.9%</td>
+                <td >2026-10-20</td>
+                <td >2</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.21</td>
+                <td >8</td>
+                <td >30.8</td>
+                <td style="background-color: #ffcdd2;">+0.86</td>
+                <td >11.7</td>
+                <td >11.7</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >建大</td>
+                <td >2106.TW</td>
+                <td >2026-10-22</td>
+                <td >16.80</td>
+                <td >-0.20</td>
+                <td >-1.2%</td>
+                <td >1.5%</td>
+                <td >1.2%</td>
+                <td >0.9%</td>
+                <td >0.9%</td>
+                <td >17.2</td>
+                <td >0.2</td>
+                <td >0.28</td>
+                <td >0.27</td>
+                <td >1.6</td>
+                <td >1.6</td>
+                <td >-2.1%</td>
+                <td >+0.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >4</td>
+                <td >+0.54</td>
+                <td >0</td>
+                <td >16.8</td>
+                <td style="background-color: #ffcdd2;">+0.52</td>
+                <td >10.1</td>
+                <td >10.1</td>
+                <td >1</td>
+            </tr>
+            <tr>
+                <td >光寶科</td>
+                <td >2301.TW</td>
+                <td >2026-10-22</td>
+                <td >255.50</td>
+                <td >-6.50</td>
+                <td >-2.5%</td>
+                <td >2.0%</td>
+                <td >2.3%</td>
+                <td >2.5%</td>
+                <td >2.3%</td>
+                <td >262.8</td>
+                <td >4.1</td>
+                <td >11.21</td>
+                <td >12.47</td>
+                <td >4.4</td>
+                <td >4.9</td>
+                <td >-2.8%</td>
+                <td >-9.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.52</td>
+                <td >-5</td>
+                <td >281.3</td>
+                <td style="background-color: #aed581;">-0.01</td>
+                <td >30.4</td>
+                <td >30.4</td>
+                <td >5</td>
+            </tr>
+            <tr>
+                <td >聯電</td>
+                <td >2303.TW</td>
+                <td >2026-10-22</td>
+                <td >125.50</td>
+                <td >-1.50</td>
+                <td >-1.2%</td>
+                <td >2.3%</td>
+                <td >2.0%</td>
+                <td >2.5%</td>
+                <td >3.4%</td>
+                <td >130.1</td>
+                <td >3.2</td>
+                <td >5.87</td>
+                <td >6.67</td>
+                <td >4.7</td>
+                <td >5.3</td>
+                <td >-3.5%</td>
+                <td >-14.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.44</td>
+                <td >-7</td>
+                <td >146.9</td>
+                <td style="background-color: #dcedc8;">+0.03</td>
+                <td >38.3</td>
+                <td >38.3</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >台達電</td>
+                <td >2308.TW</td>
+                <td >2026-10-22</td>
+                <td >1560.00</td>
+                <td >-45.00</td>
+                <td >-2.8%</td>
+                <td >3.7%</td>
+                <td >3.0%</td>
+                <td >3.9%</td>
+                <td >3.6%</td>
+                <td >1614.0</td>
+                <td >29.6</td>
+                <td >79.75</td>
+                <td >86.74</td>
+                <td >5.1</td>
+                <td >5.6</td>
+                <td >-3.4%</td>
+                <td >-14.8%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.46</td>
+                <td >-5</td>
+                <td >1832.0</td>
+                <td style="background-color: #dcedc8;">+0.02</td>
+                <td >43.1</td>
+                <td >43.1</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >華通</td>
+                <td >2313.TW</td>
+                <td >2026-10-22</td>
+                <td >224.50</td>
+                <td >-19.00</td>
+                <td >-7.8%</td>
+                <td >7.1%</td>
+                <td >5.2%</td>
+                <td >4.4%</td>
+                <td >3.9%</td>
+                <td >238.4</td>
+                <td >10.1</td>
+                <td >16.82</td>
+                <td >13.20</td>
+                <td >7.5</td>
+                <td >5.9</td>
+                <td >-5.8%</td>
+                <td >-5.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >4</td>
+                <td >+0.01</td>
+                <td >0</td>
+                <td >236.3</td>
+                <td style="background-color: #dcedc8;">+0.25</td>
+                <td >44.7</td>
+                <td >44.7</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >鴻海</td>
+                <td >2317.TW</td>
+                <td >2026-10-22</td>
+                <td >245.00</td>
+                <td >+3.50</td>
+                <td >+1.5%</td>
+                <td >1.7%</td>
+                <td >1.6%</td>
+                <td >1.4%</td>
+                <td >1.2%</td>
+                <td >241.9</td>
+                <td >2.3</td>
+                <td >6.68</td>
+                <td >6.09</td>
+                <td >2.7</td>
+                <td >2.5</td>
+                <td >+1.3%</td>
+                <td >-1.3%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.20</td>
+                <td >0</td>
+                <td >248.2</td>
+                <td style="background-color: #dcedc8;">+0.35</td>
+                <td >13.7</td>
+                <td >13.7</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >國巨</td>
+                <td >2327.TW</td>
+                <td >2026-10-22</td>
+                <td >507.00</td>
+                <td >-16.00</td>
+                <td >-3.1%</td>
+                <td >3.1%</td>
+                <td >4.1%</td>
+                <td >4.3%</td>
+                <td >3.8%</td>
+                <td >540.8</td>
+                <td >25.4</td>
+                <td >41.62</td>
+                <td >38.63</td>
+                <td >8.2</td>
+                <td >7.6</td>
+                <td >-6.2%</td>
+                <td >-13.4%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.46</td>
+                <td >-3</td>
+                <td >585.2</td>
+                <td style="background-color: #dcedc8;">+0.02</td>
+                <td >50.8</td>
+                <td >50.8</td>
+                <td style="background-color: #e57373;">9</td>
+            </tr>
+            <tr>
+                <td >台積電</td>
+                <td >2330.TW</td>
+                <td >2026-10-22</td>
+                <td >2385.00</td>
+                <td >-20.00</td>
+                <td >-0.8%</td>
+                <td >0.7%</td>
+                <td >0.8%</td>
+                <td >1.2%</td>
+                <td >1.2%</td>
+                <td >2414.0</td>
+                <td >18.3</td>
+                <td >39.29</td>
+                <td >40.74</td>
+                <td >1.6</td>
+                <td >1.7</td>
+                <td >-1.2%</td>
+                <td >-4.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.41</td>
+                <td >-4</td>
+                <td >2488.3</td>
+                <td style="background-color: #dcedc8;">+0.04</td>
+                <td >12.6</td>
+                <td >12.6</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >華邦電</td>
+                <td >2344.TW</td>
+                <td >2026-10-22</td>
+                <td >154.50</td>
+                <td >+2.00</td>
+                <td >+1.3%</td>
+                <td >4.1%</td>
+                <td >3.6%</td>
+                <td >2.9%</td>
+                <td >3.4%</td>
+                <td >155.8</td>
+                <td >3.0</td>
+                <td >8.61</td>
+                <td >8.89</td>
+                <td >5.6</td>
+                <td >5.8</td>
+                <td >-0.8%</td>
+                <td >-9.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.31</td>
+                <td >-7</td>
+                <td >169.8</td>
+                <td style="background-color: #dcedc8;">+0.10</td>
+                <td >35.1</td>
+                <td >35.1</td>
+                <td >6</td>
+            </tr>
+            <tr>
+                <td >智邦</td>
+                <td >2345.TW</td>
+                <td >2026-10-22</td>
+                <td >1775.00</td>
+                <td >-195.00</td>
+                <td >-9.9%</td>
+                <td >4.8%</td>
+                <td >4.0%</td>
+                <td >4.0%</td>
+                <td >3.7%</td>
+                <td >1936.0</td>
+                <td >82.0</td>
+                <td >130.77</td>
+                <td >114.06</td>
+                <td >7.4</td>
+                <td >6.4</td>
+                <td style="background-color: #aed581;">-8.3%</td>
+                <td >-9.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >3</td>
+                <td style="background-color: #aed581;">-0.40</td>
+                <td >-1</td>
+                <td >1955.0</td>
+                <td style="background-color: #dcedc8;">+0.05</td>
+                <td >47.8</td>
+                <td >47.8</td>
+                <td style="background-color: #e57373;">9</td>
+            </tr>
+            <tr>
+                <td >英業達</td>
+                <td >2356.TW</td>
+                <td >2026-10-22</td>
+                <td >60.50</td>
+                <td >+0.50</td>
+                <td >+0.8%</td>
+                <td >1.4%</td>
+                <td >1.4%</td>
+                <td >1.2%</td>
+                <td >1.4%</td>
+                <td >59.2</td>
+                <td >1.0</td>
+                <td >1.80</td>
+                <td >1.84</td>
+                <td >3.0</td>
+                <td >3.0</td>
+                <td >+2.1%</td>
+                <td >+2.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #e57373;">+1.03</td>
+                <td >1</td>
+                <td >59.18</td>
+                <td style="background-color: #ffcdd2;">+0.77</td>
+                <td >15.7</td>
+                <td >15.7</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >華碩</td>
+                <td >2357.TW</td>
+                <td >2026-10-22</td>
+                <td >946.00</td>
+                <td >-35.00</td>
+                <td >-3.6%</td>
+                <td >2.4%</td>
+                <td >2.0%</td>
+                <td >1.7%</td>
+                <td >2.0%</td>
+                <td >973.0</td>
+                <td >16.0</td>
+                <td >33.90</td>
+                <td >30.39</td>
+                <td >3.6</td>
+                <td >3.2</td>
+                <td >-2.8%</td>
+                <td >-2.7%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.27</td>
+                <td >-1</td>
+                <td >972.0</td>
+                <td style="background-color: #dcedc8;">+0.12</td>
+                <td >20.4</td>
+                <td >20.4</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >致茂</td>
+                <td >2360.TW</td>
+                <td >2026-10-22</td>
+                <td >1980.00</td>
+                <td >-20.00</td>
+                <td >-1.0%</td>
+                <td >4.3%</td>
+                <td >4.0%</td>
+                <td >4.0%</td>
+                <td >4.5%</td>
+                <td >2002.0</td>
+                <td >14.0</td>
+                <td >128.24</td>
+                <td >138.76</td>
+                <td >6.5</td>
+                <td >7.0</td>
+                <td >-1.1%</td>
+                <td >-10.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.28</td>
+                <td >-5</td>
+                <td >2213.0</td>
+                <td style="background-color: #dcedc8;">+0.11</td>
+                <td >41.9</td>
+                <td >41.9</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >金像電</td>
+                <td >2368.TW</td>
+                <td >2026-10-22</td>
+                <td >1115.00</td>
+                <td >-70.00</td>
+                <td >-5.9%</td>
+                <td >4.7%</td>
+                <td >4.9%</td>
+                <td >4.9%</td>
+                <td >4.8%</td>
+                <td >1197.0</td>
+                <td >49.0</td>
+                <td >97.73</td>
+                <td >82.75</td>
+                <td >8.8</td>
+                <td >7.4</td>
+                <td >-6.9%</td>
+                <td >-4.8%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.12</td>
+                <td >0</td>
+                <td >1171.0</td>
+                <td style="background-color: #dcedc8;">+0.31</td>
+                <td >47.0</td>
+                <td >47.0</td>
+                <td style="background-color: #e57373;">9</td>
+            </tr>
+            <tr>
+                <td >大同</td>
+                <td >2371.TW</td>
+                <td >2026-10-22</td>
+                <td >28.30</td>
+                <td >0.00</td>
+                <td ></td>
+                <td >1.3%</td>
+                <td >1.7%</td>
+                <td >2.1%</td>
+                <td >2.0%</td>
+                <td >28.8</td>
+                <td >0.4</td>
+                <td >0.85</td>
+                <td >0.89</td>
+                <td >3.0</td>
+                <td >3.1</td>
+                <td >-1.7%</td>
+                <td >-4.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.36</td>
+                <td >-3</td>
+                <td >29.7</td>
+                <td style="background-color: #dcedc8;">+0.07</td>
+                <td >19.5</td>
+                <td >19.5</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >廣達</td>
+                <td >2382.TW</td>
+                <td >2026-10-22</td>
+                <td >322.00</td>
+                <td >+1.50</td>
+                <td >+0.5%</td>
+                <td >2.0%</td>
+                <td >1.7%</td>
+                <td >1.2%</td>
+                <td >1.8%</td>
+                <td >319.1</td>
+                <td >3.1</td>
+                <td >8.66</td>
+                <td >8.61</td>
+                <td >2.7</td>
+                <td >2.7</td>
+                <td >+0.9%</td>
+                <td >-2.3%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.06</td>
+                <td >0</td>
+                <td >329.5</td>
+                <td style="background-color: #dcedc8;">+0.28</td>
+                <td >15.2</td>
+                <td >15.2</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >台光電</td>
+                <td >2383.TW</td>
+                <td >2026-10-22</td>
+                <td >5070.00</td>
+                <td >+125.00</td>
+                <td >+2.5%</td>
+                <td >3.9%</td>
+                <td >4.1%</td>
+                <td >4.2%</td>
+                <td >3.9%</td>
+                <td >5085.0</td>
+                <td >76.0</td>
+                <td >357.30</td>
+                <td >314.58</td>
+                <td >7.0</td>
+                <td >6.2</td>
+                <td >-0.3%</td>
+                <td >-4.5%</td>
+                <td >2026-10-19</td>
+                <td >3</td>
+                <td >0</td>
+                <td >+0.22</td>
+                <td >0</td>
+                <td >5306.0</td>
+                <td style="background-color: #dcedc8;">+0.36</td>
+                <td >34.1</td>
+                <td >34.1</td>
+                <td >6</td>
+            </tr>
+            <tr>
+                <td >南亞科</td>
+                <td >2408.TW</td>
+                <td >2026-10-22</td>
+                <td >414.00</td>
+                <td >-8.00</td>
+                <td >-1.9%</td>
+                <td >3.7%</td>
+                <td >3.6%</td>
+                <td >3.2%</td>
+                <td >3.6%</td>
+                <td >431.8</td>
+                <td >12.1</td>
+                <td >26.24</td>
+                <td >25.73</td>
+                <td >6.3</td>
+                <td >6.2</td>
+                <td >-4.1%</td>
+                <td style="background-color: #dcedc8;">-16.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.54</td>
+                <td >-7</td>
+                <td >492.8</td>
+                <td style="background-color: #aed581;">-0.02</td>
+                <td >46.8</td>
+                <td >46.8</td>
+                <td style="background-color: #e57373;">9</td>
+            </tr>
+            <tr>
+                <td >友達</td>
+                <td >2409.TW</td>
+                <td >2026-10-22</td>
+                <td >35.40</td>
+                <td >-0.40</td>
+                <td >-1.1%</td>
+                <td >2.9%</td>
+                <td >3.4%</td>
+                <td style="background-color: #ffcdd2;">5.1%</td>
+                <td >4.6%</td>
+                <td >35.7</td>
+                <td >0.6</td>
+                <td >2.14</td>
+                <td >2.04</td>
+                <td >6.0</td>
+                <td >5.8</td>
+                <td >-0.9%</td>
+                <td >-2.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.24</td>
+                <td >0</td>
+                <td >36.3</td>
+                <td style="background-color: #dcedc8;">+0.37</td>
+                <td >31.3</td>
+                <td >31.3</td>
+                <td >6</td>
+            </tr>
+            <tr>
+                <td >中華電</td>
+                <td >2412.TW</td>
+                <td >2026-10-22</td>
+                <td >158.00</td>
+                <td >+3.50</td>
+                <td >+2.3%</td>
+                <td >1.2%</td>
+                <td >0.9%</td>
+                <td >0.9%</td>
+                <td >0.8%</td>
+                <td >154.5</td>
+                <td >1.9</td>
+                <td >3.38</td>
+                <td >2.31</td>
+                <td >2.1</td>
+                <td >1.5</td>
+                <td >+2.3%</td>
+                <td >+6.9%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.74</td>
+                <td >9</td>
+                <td >147.9</td>
+                <td style="background-color: #e57373;">+1.12</td>
+                <td >16.5</td>
+                <td >16.5</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >京元電子</td>
+                <td >2449.TW</td>
+                <td >2026-10-22</td>
+                <td >262.50</td>
+                <td >+3.00</td>
+                <td >+1.2%</td>
+                <td >4.0%</td>
+                <td >3.2%</td>
+                <td >3.2%</td>
+                <td >3.4%</td>
+                <td >266.5</td>
+                <td >5.9</td>
+                <td >16.99</td>
+                <td >15.21</td>
+                <td >6.5</td>
+                <td >5.8</td>
+                <td >-1.5%</td>
+                <td >-10.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.42</td>
+                <td >-5</td>
+                <td >292.2</td>
+                <td style="background-color: #dcedc8;">+0.04</td>
+                <td >37.7</td>
+                <td >37.7</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >聯發科</td>
+                <td >2454.TW</td>
+                <td >2026-10-22</td>
+                <td >4010.00</td>
+                <td >-140.00</td>
+                <td >-3.4%</td>
+                <td >3.3%</td>
+                <td >2.3%</td>
+                <td >3.4%</td>
+                <td >3.5%</td>
+                <td >4156.0</td>
+                <td >80.8</td>
+                <td >189.18</td>
+                <td >203.46</td>
+                <td >4.7</td>
+                <td >5.1</td>
+                <td >-3.5%</td>
+                <td >-15.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >4</td>
+                <td style="background-color: #aed581;">-0.42</td>
+                <td >-7</td>
+                <td >4721.7</td>
+                <td style="background-color: #dcedc8;">+0.04</td>
+                <td >40.8</td>
+                <td >40.8</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >宏達電</td>
+                <td >2498.TW</td>
+                <td >2026-10-22</td>
+                <td >39.80</td>
+                <td >-0.20</td>
+                <td >-0.5%</td>
+                <td >1.5%</td>
+                <td >1.4%</td>
+                <td >1.8%</td>
+                <td >1.6%</td>
+                <td >40.0</td>
+                <td >0.2</td>
+                <td >0.96</td>
+                <td >1.16</td>
+                <td >2.4</td>
+                <td >2.9</td>
+                <td >-0.4%</td>
+                <td >-3.7%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.14</td>
+                <td >-3</td>
+                <td >41.3</td>
+                <td style="background-color: #dcedc8;">+0.18</td>
+                <td >15.8</td>
+                <td >15.8</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >研華</td>
+                <td >2395.TW</td>
+                <td >2026-10-22</td>
+                <td >670.00</td>
+                <td >-14.00</td>
+                <td >-2.1%</td>
+                <td >1.2%</td>
+                <td >0.9%</td>
+                <td >1.5%</td>
+                <td >1.8%</td>
+                <td >683.2</td>
+                <td >9.1</td>
+                <td >23.46</td>
+                <td >25.47</td>
+                <td >3.5</td>
+                <td >3.8</td>
+                <td >-1.9%</td>
+                <td >-5.9%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #aed581;">-0.56</td>
+                <td >-4</td>
+                <td >711.7</td>
+                <td style="background-color: #aed581;">-0.03</td>
+                <td >20.5</td>
+                <td >20.5</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >櫻花建</td>
+                <td >2539.TW</td>
+                <td >2026-10-22</td>
+                <td >32.50</td>
+                <td >-0.65</td>
+                <td >-2.0%</td>
+                <td >1.1%</td>
+                <td >1.2%</td>
+                <td >1.1%</td>
+                <td >1.5%</td>
+                <td >33.4</td>
+                <td >0.5</td>
+                <td >0.70</td>
+                <td >0.71</td>
+                <td >2.2</td>
+                <td >2.2</td>
+                <td >-2.7%</td>
+                <td >-4.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.58</td>
+                <td >-2</td>
+                <td >33.92</td>
+                <td style="background-color: #aed581;">-0.04</td>
+                <td >16.1</td>
+                <td >16.1</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >長榮</td>
+                <td >2603.TW</td>
+                <td >2026-10-22</td>
+                <td >260.00</td>
+                <td >+0.50</td>
+                <td >+0.2%</td>
+                <td >2.2%</td>
+                <td >3.7%</td>
+                <td >2.7%</td>
+                <td >2.4%</td>
+                <td >260.8</td>
+                <td >2.8</td>
+                <td >8.71</td>
+                <td >7.58</td>
+                <td >3.4</td>
+                <td >2.9</td>
+                <td >-0.3%</td>
+                <td >+5.1%</td>
+                <td >2026-10-19</td>
+                <td >3</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.05</td>
+                <td >8</td>
+                <td >247.4</td>
+                <td style="background-color: #ffcdd2;">+0.77</td>
+                <td >22.5</td>
+                <td >22.5</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >陽明</td>
+                <td >2609.TW</td>
+                <td >2026-10-22</td>
+                <td >61.90</td>
+                <td >-0.30</td>
+                <td >-0.5%</td>
+                <td >1.9%</td>
+                <td >2.7%</td>
+                <td >2.1%</td>
+                <td >2.0%</td>
+                <td >63.1</td>
+                <td >1.0</td>
+                <td >2.05</td>
+                <td >1.99</td>
+                <td >3.3</td>
+                <td >3.2</td>
+                <td >-1.9%</td>
+                <td >+1.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >4</td>
+                <td >+0.67</td>
+                <td >0</td>
+                <td >61.2</td>
+                <td style="background-color: #ffcdd2;">+0.59</td>
+                <td >18.3</td>
+                <td >18.3</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >山隆</td>
+                <td >2616.TW</td>
+                <td >2026-10-22</td>
+                <td >13.10</td>
+                <td >0.00</td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td >0.5%</td>
+                <td >0.5%</td>
+                <td >13.1</td>
+                <td >0.0</td>
+                <td >0.06</td>
+                <td >0.10</td>
+                <td >0.5</td>
+                <td >0.8</td>
+                <td ></td>
+                <td >-0.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >6</td>
+                <td >+0.14</td>
+                <td >0</td>
+                <td >13.2</td>
+                <td style="background-color: #dcedc8;">+0.32</td>
+                <td >2.7</td>
+                <td >2.7</td>
+                <td >0</td>
+            </tr>
+            <tr>
+                <td >漢翔</td>
+                <td >2634.TW</td>
+                <td >2026-10-22</td>
+                <td >60.50</td>
+                <td >-0.50</td>
+                <td >-0.8%</td>
+                <td >1.7%</td>
+                <td >1.4%</td>
+                <td >1.4%</td>
+                <td >1.7%</td>
+                <td >61.1</td>
+                <td >0.6</td>
+                <td >1.59</td>
+                <td >1.98</td>
+                <td >2.6</td>
+                <td >3.3</td>
+                <td >-1.0%</td>
+                <td >-3.7%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.33</td>
+                <td >-8</td>
+                <td >62.8</td>
+                <td style="background-color: #dcedc8;">+0.08</td>
+                <td >16.8</td>
+                <td >16.8</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >星宇航空</td>
+                <td >2646.TW</td>
+                <td >2026-10-22</td>
+                <td >20.15</td>
+                <td >+0.15</td>
+                <td >+0.8%</td>
+                <td >0.9%</td>
+                <td >0.7%</td>
+                <td >0.7%</td>
+                <td >0.7%</td>
+                <td >20.1</td>
+                <td >0.1</td>
+                <td >0.19</td>
+                <td >0.24</td>
+                <td >0.9</td>
+                <td >1.2</td>
+                <td ></td>
+                <td ></td>
+                <td >2026-10-16</td>
+                <td >4</td>
+                <td >0</td>
+                <td >+0.48</td>
+                <td >0</td>
+                <td >20.16</td>
+                <td style="background-color: #dcedc8;">+0.49</td>
+                <td >5.1</td>
+                <td >5.1</td>
+                <td >0</td>
+            </tr>
+            <tr>
+                <td >華南金</td>
+                <td >2880.TW</td>
+                <td >2026-10-22</td>
+                <td >50.30</td>
+                <td >+2.20</td>
+                <td >+4.6%</td>
+                <td >2.5%</td>
+                <td >2.6%</td>
+                <td >2.1%</td>
+                <td >1.9%</td>
+                <td >49.1</td>
+                <td >0.8</td>
+                <td >1.56</td>
+                <td >1.36</td>
+                <td >3.1</td>
+                <td >2.7</td>
+                <td >+2.4%</td>
+                <td >+7.1%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.44</td>
+                <td >1</td>
+                <td >46.97</td>
+                <td style="background-color: #ffcdd2;">+0.97</td>
+                <td >24.4</td>
+                <td >24.4</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >富邦金</td>
+                <td >2881.TW</td>
+                <td >2026-10-22</td>
+                <td >158.50</td>
+                <td >+5.00</td>
+                <td >+3.3%</td>
+                <td >2.5%</td>
+                <td >2.2%</td>
+                <td >1.8%</td>
+                <td >1.7%</td>
+                <td >158.3</td>
+                <td >2.6</td>
+                <td >5.12</td>
+                <td >4.41</td>
+                <td >3.2</td>
+                <td >2.8</td>
+                <td >+0.1%</td>
+                <td >+2.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.97</td>
+                <td >0</td>
+                <td >155.0</td>
+                <td style="background-color: #ffcdd2;">+0.74</td>
+                <td >16.5</td>
+                <td >16.5</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >國泰金</td>
+                <td >2882.TW</td>
+                <td >2026-10-22</td>
+                <td >113.50</td>
+                <td >+3.50</td>
+                <td >+3.2%</td>
+                <td >2.8%</td>
+                <td >2.3%</td>
+                <td >1.8%</td>
+                <td >1.7%</td>
+                <td >113.5</td>
+                <td >2.0</td>
+                <td >3.88</td>
+                <td >3.32</td>
+                <td >3.4</td>
+                <td >2.9</td>
+                <td ></td>
+                <td >+1.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.86</td>
+                <td >0</td>
+                <td >112.35</td>
+                <td style="background-color: #ffcdd2;">+0.68</td>
+                <td >16.0</td>
+                <td >16.0</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >凱基金</td>
+                <td >2883.TW</td>
+                <td >2026-10-22</td>
+                <td >37.75</td>
+                <td >+0.50</td>
+                <td >+1.3%</td>
+                <td >2.0%</td>
+                <td >2.1%</td>
+                <td >2.1%</td>
+                <td >1.9%</td>
+                <td >38.1</td>
+                <td >0.6</td>
+                <td >1.09</td>
+                <td >1.08</td>
+                <td >2.9</td>
+                <td >2.9</td>
+                <td >-1.0%</td>
+                <td >-1.7%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.13</td>
+                <td >0</td>
+                <td >38.4</td>
+                <td style="background-color: #dcedc8;">+0.31</td>
+                <td >16.6</td>
+                <td >16.6</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >玉山金</td>
+                <td >2884.TW</td>
+                <td >2026-10-22</td>
+                <td >49.75</td>
+                <td >+1.40</td>
+                <td >+2.9%</td>
+                <td >2.1%</td>
+                <td >1.7%</td>
+                <td >1.5%</td>
+                <td >1.8%</td>
+                <td >49.1</td>
+                <td >0.5</td>
+                <td >1.32</td>
+                <td >1.18</td>
+                <td >2.6</td>
+                <td >2.4</td>
+                <td >+1.4%</td>
+                <td >+7.0%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.51</td>
+                <td >7</td>
+                <td >46.5</td>
+                <td style="background-color: #e57373;">+1.00</td>
+                <td >20.4</td>
+                <td >20.4</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >元大金</td>
+                <td >2885.TW</td>
+                <td >2026-10-22</td>
+                <td >72.40</td>
+                <td >+1.90</td>
+                <td >+2.7%</td>
+                <td >1.8%</td>
+                <td >1.8%</td>
+                <td >1.6%</td>
+                <td >1.5%</td>
+                <td >72.0</td>
+                <td >0.9</td>
+                <td >2.01</td>
+                <td >1.80</td>
+                <td >2.8</td>
+                <td >2.5</td>
+                <td >+0.5%</td>
+                <td >+3.4%</td>
+                <td >2026-10-16</td>
+                <td >4</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.20</td>
+                <td >1</td>
+                <td >70.01</td>
+                <td style="background-color: #ffcdd2;">+0.85</td>
+                <td >15.9</td>
+                <td >15.9</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >兆豐金</td>
+                <td >2886.TW</td>
+                <td >2026-10-22</td>
+                <td >55.20</td>
+                <td >+2.00</td>
+                <td >+3.8%</td>
+                <td >2.0%</td>
+                <td >1.6%</td>
+                <td >1.5%</td>
+                <td >1.5%</td>
+                <td >53.7</td>
+                <td >0.9</td>
+                <td >1.61</td>
+                <td >1.31</td>
+                <td >2.9</td>
+                <td >2.4</td>
+                <td >+2.8%</td>
+                <td style="background-color: #e57373;">+8.8%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.67</td>
+                <td >5</td>
+                <td >50.73</td>
+                <td style="background-color: #e57373;">+1.09</td>
+                <td >23.5</td>
+                <td >23.5</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >台新金</td>
+                <td >2887.TW</td>
+                <td >2026-10-22</td>
+                <td >42.10</td>
+                <td >+1.10</td>
+                <td >+2.7%</td>
+                <td >2.6%</td>
+                <td >2.6%</td>
+                <td >2.1%</td>
+                <td >2.0%</td>
+                <td >41.9</td>
+                <td >0.5</td>
+                <td >1.26</td>
+                <td >1.23</td>
+                <td >3.0</td>
+                <td >2.9</td>
+                <td >+0.5%</td>
+                <td >+0.1%</td>
+                <td >2026-10-19</td>
+                <td >3</td>
+                <td >0</td>
+                <td >+0.52</td>
+                <td >0</td>
+                <td >42.06</td>
+                <td style="background-color: #ffcdd2;">+0.51</td>
+                <td >15.7</td>
+                <td >15.7</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >永豐金</td>
+                <td >2890.TW</td>
+                <td >2026-10-22</td>
+                <td >46.35</td>
+                <td >+2.10</td>
+                <td >+4.8%</td>
+                <td >3.0%</td>
+                <td >2.5%</td>
+                <td >2.0%</td>
+                <td >1.8%</td>
+                <td >45.4</td>
+                <td >0.7</td>
+                <td >1.47</td>
+                <td >1.24</td>
+                <td >3.2</td>
+                <td >2.7</td>
+                <td >+2.0%</td>
+                <td >+3.4%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.53</td>
+                <td >1</td>
+                <td >44.82</td>
+                <td style="background-color: #e57373;">+1.01</td>
+                <td >20.6</td>
+                <td >20.6</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >中信金</td>
+                <td >2891.TW</td>
+                <td >2026-10-22</td>
+                <td >74.90</td>
+                <td >+3.30</td>
+                <td >+4.6%</td>
+                <td >2.6%</td>
+                <td >2.3%</td>
+                <td >1.8%</td>
+                <td >1.8%</td>
+                <td >73.3</td>
+                <td >1.1</td>
+                <td >2.47</td>
+                <td >1.92</td>
+                <td >3.3</td>
+                <td >2.6</td>
+                <td >+2.2%</td>
+                <td >+7.0%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.58</td>
+                <td >1</td>
+                <td >70.04</td>
+                <td style="background-color: #e57373;">+1.04</td>
+                <td >23.6</td>
+                <td >23.6</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >第一金</td>
+                <td >2892.TW</td>
+                <td >2026-10-22</td>
+                <td >42.35</td>
+                <td >+1.60</td>
+                <td >+3.9%</td>
+                <td >2.2%</td>
+                <td >1.7%</td>
+                <td >1.5%</td>
+                <td >1.5%</td>
+                <td >41.5</td>
+                <td >0.5</td>
+                <td >1.04</td>
+                <td >0.94</td>
+                <td >2.5</td>
+                <td >2.2</td>
+                <td >+2.1%</td>
+                <td >+6.4%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.57</td>
+                <td >7</td>
+                <td >39.79</td>
+                <td style="background-color: #e57373;">+1.03</td>
+                <td >20.2</td>
+                <td >20.2</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >統一超</td>
+                <td >2912.TW</td>
+                <td >2026-10-22</td>
+                <td >226.00</td>
+                <td >-1.00</td>
+                <td >-0.4%</td>
+                <td >1.3%</td>
+                <td >1.1%</td>
+                <td >0.9%</td>
+                <td >0.9%</td>
+                <td >225.9</td>
+                <td >1.7</td>
+                <td >4.22</td>
+                <td >3.34</td>
+                <td >1.9</td>
+                <td >1.5</td>
+                <td ></td>
+                <td >+4.4%</td>
+                <td >2026-10-20</td>
+                <td >2</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.31</td>
+                <td >6</td>
+                <td >216.6</td>
+                <td style="background-color: #ffcdd2;">+0.91</td>
+                <td >12.0</td>
+                <td >12.0</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >大立光</td>
+                <td >3008.TW</td>
+                <td >2026-10-22</td>
+                <td >6175.00</td>
+                <td >+200.00</td>
+                <td >+3.4%</td>
+                <td >3.1%</td>
+                <td >4.6%</td>
+                <td >4.0%</td>
+                <td >4.5%</td>
+                <td >6280.0</td>
+                <td >212.0</td>
+                <td >451.88</td>
+                <td >418.37</td>
+                <td >7.3</td>
+                <td >6.8</td>
+                <td >-1.7%</td>
+                <td >-4.8%</td>
+                <td >2026-10-19</td>
+                <td >3</td>
+                <td >0</td>
+                <td >+0.11</td>
+                <td >0</td>
+                <td >6484.0</td>
+                <td style="background-color: #dcedc8;">+0.30</td>
+                <td >36.8</td>
+                <td >36.8</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >奇鋐</td>
+                <td >3017.TW</td>
+                <td >2026-10-22</td>
+                <td >3145.00</td>
+                <td >-180.00</td>
+                <td >-5.4%</td>
+                <td >5.7%</td>
+                <td >4.0%</td>
+                <td >3.5%</td>
+                <td >3.6%</td>
+                <td >3238.0</td>
+                <td >102.0</td>
+                <td >193.81</td>
+                <td >184.57</td>
+                <td >6.2</td>
+                <td >5.9</td>
+                <td >-2.9%</td>
+                <td >-7.5%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #aed581;">-0.42</td>
+                <td >-1</td>
+                <td >3402.0</td>
+                <td style="background-color: #dcedc8;">+0.04</td>
+                <td >39.3</td>
+                <td >39.3</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >欣興</td>
+                <td >3037.TW</td>
+                <td >2026-10-22</td>
+                <td >1085.00</td>
+                <td >+30.00</td>
+                <td >+2.8%</td>
+                <td >5.6%</td>
+                <td >4.1%</td>
+                <td >4.5%</td>
+                <td >3.9%</td>
+                <td >1085.0</td>
+                <td >21.2</td>
+                <td >83.24</td>
+                <td >70.30</td>
+                <td >7.7</td>
+                <td >6.5</td>
+                <td ></td>
+                <td >-8.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.03</td>
+                <td >-2</td>
+                <td >1180.0</td>
+                <td style="background-color: #dcedc8;">+0.24</td>
+                <td >40.2</td>
+                <td >40.2</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >台灣大</td>
+                <td >3045.TW</td>
+                <td >2026-10-22</td>
+                <td >133.00</td>
+                <td >+2.50</td>
+                <td >+1.9%</td>
+                <td >1.7%</td>
+                <td >1.7%</td>
+                <td >1.4%</td>
+                <td >1.2%</td>
+                <td >131.1</td>
+                <td >1.0</td>
+                <td >3.13</td>
+                <td >2.38</td>
+                <td >2.4</td>
+                <td >1.8</td>
+                <td >+1.5%</td>
+                <td >+6.5%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.54</td>
+                <td >7</td>
+                <td >124.9</td>
+                <td style="background-color: #e57373;">+1.02</td>
+                <td >18.1</td>
+                <td >18.1</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >穩懋</td>
+                <td >3105.TWO</td>
+                <td >2026-10-22</td>
+                <td >486.00</td>
+                <td >+11.00</td>
+                <td >+2.3%</td>
+                <td >4.6%</td>
+                <td >3.4%</td>
+                <td >4.5%</td>
+                <td >4.1%</td>
+                <td >489.2</td>
+                <td >10.6</td>
+                <td >41.07</td>
+                <td >34.17</td>
+                <td >8.4</td>
+                <td >7.0</td>
+                <td >-0.7%</td>
+                <td >-8.9%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.04</td>
+                <td >-3</td>
+                <td >533.5</td>
+                <td style="background-color: #dcedc8;">+0.23</td>
+                <td >41.6</td>
+                <td >41.6</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >緯創</td>
+                <td >3231.TW</td>
+                <td >2026-10-22</td>
+                <td >190.00</td>
+                <td >+1.00</td>
+                <td >+0.5%</td>
+                <td >4.3%</td>
+                <td >3.1%</td>
+                <td >2.5%</td>
+                <td >2.4%</td>
+                <td >183.5</td>
+                <td >5.3</td>
+                <td >8.94</td>
+                <td >7.30</td>
+                <td >4.7</td>
+                <td >3.8</td>
+                <td style="background-color: #ffcdd2;">+3.5%</td>
+                <td >+2.4%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #e57373;">+1.06</td>
+                <td >1</td>
+                <td >185.6</td>
+                <td style="background-color: #ffcdd2;">+0.78</td>
+                <td >26.8</td>
+                <td >26.8</td>
+                <td >5</td>
+            </tr>
+            <tr>
+                <td >創意</td>
+                <td >3443.TW</td>
+                <td >2026-10-22</td>
+                <td >7585.00</td>
+                <td >-160.00</td>
+                <td >-2.1%</td>
+                <td >4.2%</td>
+                <td >3.1%</td>
+                <td >4.5%</td>
+                <td >4.5%</td>
+                <td >7662.0</td>
+                <td >122.0</td>
+                <td >589.42</td>
+                <td >481.82</td>
+                <td >7.8</td>
+                <td >6.3</td>
+                <td >-1.0%</td>
+                <td >-5.9%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.21</td>
+                <td >-1</td>
+                <td >8060.0</td>
+                <td style="background-color: #dcedc8;">+0.14</td>
+                <td >37.2</td>
+                <td >37.2</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >敘豐</td>
+                <td >3485.TWO</td>
+                <td >2026-10-22</td>
+                <td >221.50</td>
+                <td >+10.50</td>
+                <td >+5.0%</td>
+                <td style="background-color: #e57373;">7.7%</td>
+                <td style="background-color: #e57373;">6.5%</td>
+                <td >4.6%</td>
+                <td >4.0%</td>
+                <td >227.0</td>
+                <td >14.2</td>
+                <td >20.92</td>
+                <td >14.11</td>
+                <td style="background-color: #e57373;">9.4</td>
+                <td >6.4</td>
+                <td >-2.4%</td>
+                <td >+3.3%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.77</td>
+                <td >0</td>
+                <td >214.4</td>
+                <td style="background-color: #ffcdd2;">+0.64</td>
+                <td >44.3</td>
+                <td >44.3</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >昇達科</td>
+                <td >3491.TWO</td>
+                <td >2026-10-22</td>
+                <td >1320.00</td>
+                <td >-10.00</td>
+                <td >-0.8%</td>
+                <td >6.4%</td>
+                <td >5.1%</td>
+                <td >5.0%</td>
+                <td >4.7%</td>
+                <td >1363.0</td>
+                <td >52.0</td>
+                <td >108.30</td>
+                <td >98.88</td>
+                <td >8.2</td>
+                <td >7.5</td>
+                <td >-3.1%</td>
+                <td >-12.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.29</td>
+                <td >-3</td>
+                <td >1502.0</td>
+                <td style="background-color: #dcedc8;">+0.11</td>
+                <td >52.1</td>
+                <td >52.1</td>
+                <td style="background-color: #e57373;">10</td>
+            </tr>
+            <tr>
+                <td >健策</td>
+                <td >3653.TW</td>
+                <td >2026-10-22</td>
+                <td >6070.00</td>
+                <td >-580.00</td>
+                <td >-8.7%</td>
+                <td >3.9%</td>
+                <td >3.8%</td>
+                <td >4.5%</td>
+                <td >4.2%</td>
+                <td >6555.0</td>
+                <td >253.0</td>
+                <td >403.45</td>
+                <td >365.37</td>
+                <td >6.7</td>
+                <td >6.0</td>
+                <td style="background-color: #dcedc8;">-7.4%</td>
+                <td >-9.8%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #aed581;">-0.31</td>
+                <td >-1</td>
+                <td >6728.0</td>
+                <td style="background-color: #dcedc8;">+0.09</td>
+                <td >46.2</td>
+                <td >46.2</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >貿聯-KY</td>
+                <td >3665.TW</td>
+                <td >2026-10-22</td>
+                <td >1875.00</td>
+                <td >-50.00</td>
+                <td >-2.6%</td>
+                <td >3.8%</td>
+                <td >3.2%</td>
+                <td >3.8%</td>
+                <td >4.0%</td>
+                <td >1961.0</td>
+                <td >54.0</td>
+                <td >114.49</td>
+                <td >129.05</td>
+                <td >6.1</td>
+                <td >6.9</td>
+                <td >-4.4%</td>
+                <td style="background-color: #aed581;">-17.6%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.46</td>
+                <td >-5</td>
+                <td >2275.0</td>
+                <td style="background-color: #dcedc8;">+0.02</td>
+                <td >49.7</td>
+                <td >49.7</td>
+                <td style="background-color: #e57373;">9</td>
+            </tr>
+            <tr>
+                <td >漢磊</td>
+                <td >3707.TWO</td>
+                <td >2026-10-22</td>
+                <td >70.40</td>
+                <td >-2.50</td>
+                <td >-3.4%</td>
+                <td >2.8%</td>
+                <td >4.3%</td>
+                <td >4.7%</td>
+                <td >4.2%</td>
+                <td >74.3</td>
+                <td >2.7</td>
+                <td >4.83</td>
+                <td >4.47</td>
+                <td >6.9</td>
+                <td >6.3</td>
+                <td >-5.2%</td>
+                <td >-9.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.02</td>
+                <td >-1</td>
+                <td >77.4</td>
+                <td style="background-color: #dcedc8;">+0.24</td>
+                <td >43.4</td>
+                <td >43.4</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >日月光投控</td>
+                <td >3711.TW</td>
+                <td >2026-10-22</td>
+                <td >654.00</td>
+                <td >-6.00</td>
+                <td >-0.9%</td>
+                <td >4.2%</td>
+                <td >3.4%</td>
+                <td >3.1%</td>
+                <td >3.1%</td>
+                <td >665.6</td>
+                <td >7.3</td>
+                <td >35.78</td>
+                <td >31.39</td>
+                <td >5.5</td>
+                <td >4.8</td>
+                <td >-1.7%</td>
+                <td >-7.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.27</td>
+                <td >-2</td>
+                <td >705.0</td>
+                <td style="background-color: #dcedc8;">+0.11</td>
+                <td >33.1</td>
+                <td >33.1</td>
+                <td >6</td>
+            </tr>
+            <tr>
+                <td >達明</td>
+                <td >4585.TW</td>
+                <td >2026-10-22</td>
+                <td >270.00</td>
+                <td >-2.00</td>
+                <td >-0.7%</td>
+                <td >0.9%</td>
+                <td >0.9%</td>
+                <td >0.8%</td>
+                <td >1.1%</td>
+                <td >276.1</td>
+                <td >4.5</td>
+                <td >5.61</td>
+                <td >6.07</td>
+                <td >2.1</td>
+                <td >2.2</td>
+                <td >-2.2%</td>
+                <td >-6.3%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.66</td>
+                <td >-8</td>
+                <td >288.2</td>
+                <td style="background-color: #aed581;">-0.08</td>
+                <td >16.6</td>
+                <td >16.6</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >遠傳</td>
+                <td >4904.TW</td>
+                <td >2026-10-22</td>
+                <td >115.00</td>
+                <td >+3.00</td>
+                <td >+2.7%</td>
+                <td >2.3%</td>
+                <td >1.7%</td>
+                <td >1.5%</td>
+                <td >1.4%</td>
+                <td >113.2</td>
+                <td >1.0</td>
+                <td >2.73</td>
+                <td >2.22</td>
+                <td >2.4</td>
+                <td >1.9</td>
+                <td >+1.6%</td>
+                <td >+7.0%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.59</td>
+                <td >7</td>
+                <td >107.5</td>
+                <td style="background-color: #e57373;">+1.04</td>
+                <td >19.7</td>
+                <td >19.7</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >臻鼎-KY</td>
+                <td >4958.TW</td>
+                <td >2026-10-22</td>
+                <td >567.00</td>
+                <td >+20.00</td>
+                <td >+3.7%</td>
+                <td >5.9%</td>
+                <td >4.6%</td>
+                <td >4.2%</td>
+                <td >3.9%</td>
+                <td >547.4</td>
+                <td >16.0</td>
+                <td >41.08</td>
+                <td >32.83</td>
+                <td >7.2</td>
+                <td >5.8</td>
+                <td style="background-color: #e57373;">+3.6%</td>
+                <td >+5.4%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.86</td>
+                <td >0</td>
+                <td >537.9</td>
+                <td style="background-color: #ffcdd2;">+0.68</td>
+                <td >40.7</td>
+                <td >40.7</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >全訊</td>
+                <td >5222.TW</td>
+                <td >2026-10-22</td>
+                <td >91.30</td>
+                <td >-1.40</td>
+                <td >-1.5%</td>
+                <td >0.8%</td>
+                <td >1.0%</td>
+                <td >1.5%</td>
+                <td >1.4%</td>
+                <td >94.6</td>
+                <td >2.5</td>
+                <td >2.09</td>
+                <td >2.49</td>
+                <td >2.3</td>
+                <td >2.7</td>
+                <td >-3.5%</td>
+                <td >-10.3%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.57</td>
+                <td >-9</td>
+                <td >101.8</td>
+                <td style="background-color: #aed581;">-0.04</td>
+                <td >23.5</td>
+                <td >23.5</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >中美晶</td>
+                <td >5483.TWO</td>
+                <td >2026-10-22</td>
+                <td >186.00</td>
+                <td >-5.50</td>
+                <td >-2.9%</td>
+                <td >3.1%</td>
+                <td >3.1%</td>
+                <td >3.9%</td>
+                <td >3.4%</td>
+                <td >193.3</td>
+                <td >4.6</td>
+                <td >11.73</td>
+                <td >11.26</td>
+                <td >6.3</td>
+                <td >6.0</td>
+                <td >-3.8%</td>
+                <td >-8.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.16</td>
+                <td >-1</td>
+                <td >202.5</td>
+                <td style="background-color: #dcedc8;">+0.17</td>
+                <td >37.8</td>
+                <td >37.8</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >合庫金</td>
+                <td >5880.TW</td>
+                <td >2026-10-22</td>
+                <td >28.20</td>
+                <td >+0.75</td>
+                <td >+2.7%</td>
+                <td >2.0%</td>
+                <td >1.6%</td>
+                <td >1.4%</td>
+                <td >1.2%</td>
+                <td >27.9</td>
+                <td >0.3</td>
+                <td >0.64</td>
+                <td >0.53</td>
+                <td >2.3</td>
+                <td >1.9</td>
+                <td >+1.2%</td>
+                <td >+5.0%</td>
+                <td ></td>
+                <td style="background-color: #e57373;"></td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.42</td>
+                <td >1</td>
+                <td >26.86</td>
+                <td style="background-color: #ffcdd2;">+0.96</td>
+                <td >16.5</td>
+                <td >16.5</td>
+                <td >3</td>
+            </tr>
+            <tr>
+                <td >凌華</td>
+                <td >6166.TW</td>
+                <td >2026-10-22</td>
+                <td >103.50</td>
+                <td >-3.00</td>
+                <td >-2.8%</td>
+                <td >1.4%</td>
+                <td >1.9%</td>
+                <td >3.3%</td>
+                <td >2.9%</td>
+                <td >107.1</td>
+                <td >2.3</td>
+                <td >5.02</td>
+                <td >5.91</td>
+                <td >4.8</td>
+                <td >5.7</td>
+                <td >-3.4%</td>
+                <td >-15.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.42</td>
+                <td >-6</td>
+                <td >122.0</td>
+                <td style="background-color: #dcedc8;">+0.04</td>
+                <td >38.6</td>
+                <td >38.6</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >啟碁</td>
+                <td >6285.TW</td>
+                <td >2026-10-22</td>
+                <td >230.00</td>
+                <td >-17.50</td>
+                <td >-7.1%</td>
+                <td >5.0%</td>
+                <td >4.3%</td>
+                <td >3.5%</td>
+                <td >3.0%</td>
+                <td >244.0</td>
+                <td >8.3</td>
+                <td >14.45</td>
+                <td >11.52</td>
+                <td >6.3</td>
+                <td >5.0</td>
+                <td >-5.7%</td>
+                <td >-5.7%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #aed581;">-0.19</td>
+                <td >-1</td>
+                <td >244.0</td>
+                <td style="background-color: #dcedc8;">+0.16</td>
+                <td >38.6</td>
+                <td >38.6</td>
+                <td style="background-color: #ffcdd2;">7</td>
+            </tr>
+            <tr>
+                <td >藥華藥</td>
+                <td >6446.TW</td>
+                <td >2026-10-22</td>
+                <td >1160.00</td>
+                <td >+5.00</td>
+                <td >+0.4%</td>
+                <td >3.4%</td>
+                <td >2.6%</td>
+                <td >2.4%</td>
+                <td >2.8%</td>
+                <td >1188.0</td>
+                <td >33.0</td>
+                <td >51.26</td>
+                <td >58.64</td>
+                <td >4.4</td>
+                <td >5.0</td>
+                <td >-2.4%</td>
+                <td >-1.8%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.04</td>
+                <td >0</td>
+                <td >1182.0</td>
+                <td style="background-color: #dcedc8;">+0.27</td>
+                <td >24.9</td>
+                <td >24.9</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >台塑化</td>
+                <td >6505.TW</td>
+                <td >2026-10-22</td>
+                <td >106.50</td>
+                <td >0.00</td>
+                <td ></td>
+                <td >7.3%</td>
+                <td style="background-color: #ffcdd2;">6.4%</td>
+                <td style="background-color: #ffcdd2;">5.1%</td>
+                <td >4.7%</td>
+                <td >112.6</td>
+                <td >6.1</td>
+                <td >9.98</td>
+                <td >6.93</td>
+                <td style="background-color: #e57373;">9.4</td>
+                <td >6.5</td>
+                <td >-5.4%</td>
+                <td >+3.2%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.65</td>
+                <td >0</td>
+                <td >103.2</td>
+                <td style="background-color: #ffcdd2;">+0.58</td>
+                <td >48.1</td>
+                <td >48.1</td>
+                <td style="background-color: #e57373;">9</td>
+            </tr>
+            <tr>
+                <td >穎崴</td>
+                <td >6515.TW</td>
+                <td >2026-10-22</td>
+                <td >4795.00</td>
+                <td >-165.00</td>
+                <td >-3.3%</td>
+                <td >4.6%</td>
+                <td >5.4%</td>
+                <td >5.0%</td>
+                <td style="background-color: #ffcdd2;">4.9%</td>
+                <td >5026.0</td>
+                <td >137.0</td>
+                <td >317.97</td>
+                <td >385.87</td>
+                <td >6.6</td>
+                <td style="background-color: #ffcdd2;">8.1</td>
+                <td >-4.6%</td>
+                <td >-15.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.56</td>
+                <td >-6</td>
+                <td >5640.0</td>
+                <td style="background-color: #aed581;">-0.03</td>
+                <td >54.1</td>
+                <td >54.1</td>
+                <td style="background-color: #e57373;">10</td>
+            </tr>
+            <tr>
+                <td >達發</td>
+                <td >6526.TW</td>
+                <td >2026-10-22</td>
+                <td >778.00</td>
+                <td >-23.00</td>
+                <td >-2.9%</td>
+                <td >2.3%</td>
+                <td >2.9%</td>
+                <td >3.6%</td>
+                <td >3.5%</td>
+                <td >784.4</td>
+                <td >8.5</td>
+                <td >46.56</td>
+                <td >39.59</td>
+                <td >6.0</td>
+                <td >5.1</td>
+                <td >-0.8%</td>
+                <td >-3.0%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.11</td>
+                <td >0</td>
+                <td >802.3</td>
+                <td style="background-color: #dcedc8;">+0.31</td>
+                <td >27.3</td>
+                <td >27.3</td>
+                <td >5</td>
+            </tr>
+            <tr>
+                <td >晶心科</td>
+                <td >6533.TW</td>
+                <td >2026-10-22</td>
+                <td >282.50</td>
+                <td >+1.00</td>
+                <td >+0.4%</td>
+                <td style="background-color: #ffcdd2;">7.4%</td>
+                <td >5.6%</td>
+                <td style="background-color: #e57373;">6.3%</td>
+                <td style="background-color: #e57373;">5.8%</td>
+                <td >295.5</td>
+                <td >15.2</td>
+                <td >22.88</td>
+                <td >18.99</td>
+                <td >8.1</td>
+                <td >6.7</td>
+                <td >-4.4%</td>
+                <td >-9.4%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td >+0.08</td>
+                <td >0</td>
+                <td >311.8</td>
+                <td style="background-color: #dcedc8;">+0.29</td>
+                <td >53.8</td>
+                <td >53.8</td>
+                <td style="background-color: #e57373;">10</td>
+            </tr>
+            <tr>
+                <td >研揚</td>
+                <td >6579.TW</td>
+                <td >2026-10-22</td>
+                <td >140.00</td>
+                <td >-2.50</td>
+                <td >-1.8%</td>
+                <td >1.1%</td>
+                <td >1.1%</td>
+                <td >1.5%</td>
+                <td >1.4%</td>
+                <td >143.7</td>
+                <td >2.5</td>
+                <td >3.48</td>
+                <td >4.14</td>
+                <td >2.5</td>
+                <td >3.0</td>
+                <td >-2.6%</td>
+                <td >-7.7%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >14</td>
+                <td style="background-color: #aed581;">-0.53</td>
+                <td >-5</td>
+                <td >151.7</td>
+                <td style="background-color: #aed581;">-0.01</td>
+                <td >20.8</td>
+                <td >20.8</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >緯穎</td>
+                <td >6669.TW</td>
+                <td >2026-10-22</td>
+                <td >1840.00</td>
+                <td >-85.00</td>
+                <td >-4.4%</td>
+                <td >5.1%</td>
+                <td >3.7%</td>
+                <td >3.4%</td>
+                <td >3.2%</td>
+                <td >1880.0</td>
+                <td >33.0</td>
+                <td >115.15</td>
+                <td >109.02</td>
+                <td >6.3</td>
+                <td >5.9</td>
+                <td >-2.1%</td>
+                <td >-11.9%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #aed581;">-0.42</td>
+                <td >-5</td>
+                <td >2089.0</td>
+                <td style="background-color: #dcedc8;">+0.04</td>
+                <td >41.6</td>
+                <td >41.6</td>
+                <td style="background-color: #ffcdd2;">8</td>
+            </tr>
+            <tr>
+                <td >漢測</td>
+                <td >7856.TWO</td>
+                <td >2026-10-22</td>
+                <td >3410.00</td>
+                <td >+50.00</td>
+                <td >+1.5%</td>
+                <td >5.9%</td>
+                <td >5.3%</td>
+                <td >4.2%</td>
+                <td >4.5%</td>
+                <td >3408.0</td>
+                <td >72.0</td>
+                <td >241.75</td>
+                <td >304.89</td>
+                <td >7.1</td>
+                <td style="background-color: #e57373;">8.9</td>
+                <td >+0.1%</td>
+                <td >-15.9%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.20</td>
+                <td >-9</td>
+                <td >4056.0</td>
+                <td style="background-color: #dcedc8;">+0.15</td>
+                <td >51.9</td>
+                <td >51.9</td>
+                <td style="background-color: #e57373;">10</td>
+            </tr>
+            <tr>
+                <td >元太</td>
+                <td >8069.TWO</td>
+                <td >2026-10-22</td>
+                <td >153.50</td>
+                <td >-2.50</td>
+                <td >-1.6%</td>
+                <td >3.5%</td>
+                <td >2.9%</td>
+                <td >2.2%</td>
+                <td >2.0%</td>
+                <td >153.6</td>
+                <td >3.7</td>
+                <td >5.79</td>
+                <td >5.79</td>
+                <td >3.8</td>
+                <td >3.8</td>
+                <td >-0.1%</td>
+                <td >+3.9%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >3</td>
+                <td style="background-color: #e57373;">+1.16</td>
+                <td >4</td>
+                <td >147.7</td>
+                <td style="background-color: #ffcdd2;">+0.83</td>
+                <td >22.2</td>
+                <td >22.2</td>
+                <td >4</td>
+            </tr>
+            <tr>
+                <td >三竹</td>
+                <td >8284.TWO</td>
+                <td >2026-10-22</td>
+                <td >67.50</td>
+                <td >-0.40</td>
+                <td >-0.6%</td>
+                <td >0.2%</td>
+                <td >0.4%</td>
+                <td >0.4%</td>
+                <td >0.7%</td>
+                <td >67.9</td>
+                <td >0.2</td>
+                <td >0.39</td>
+                <td >0.65</td>
+                <td >0.6</td>
+                <td >1.0</td>
+                <td >-0.6%</td>
+                <td >-0.8%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >1</td>
+                <td style="background-color: #aed581;">-0.25</td>
+                <td >-1</td>
+                <td >68.1</td>
+                <td style="background-color: #dcedc8;">+0.12</td>
+                <td >4.7</td>
+                <td >4.7</td>
+                <td >0</td>
+            </tr>
+            <tr>
+                <td >寶成</td>
+                <td >9904.TW</td>
+                <td >2026-10-22</td>
+                <td >26.40</td>
+                <td >-0.10</td>
+                <td >-0.4%</td>
+                <td >0.6%</td>
+                <td >0.9%</td>
+                <td >1.0%</td>
+                <td >1.0%</td>
+                <td >26.4</td>
+                <td >0.1</td>
+                <td >0.43</td>
+                <td >0.39</td>
+                <td >1.6</td>
+                <td >1.5</td>
+                <td ></td>
+                <td >+4.1%</td>
+                <td >2026-10-21</td>
+                <td >1</td>
+                <td >2</td>
+                <td style="background-color: #e57373;">+1.21</td>
+                <td >10</td>
+                <td >25.4</td>
+                <td style="background-color: #ffcdd2;">+0.86</td>
+                <td >10.7</td>
+                <td >10.7</td>
+                <td >2</td>
+            </tr>
+            <tr>
+                <td >中鼎</td>
+                <td >9933.TW</td>
+                <td >2026-10-22</td>
+                <td >44.70</td>
+                <td >+1.70</td>
+                <td >+4.0%</td>
+                <td >1.9%</td>
+                <td >2.0%</td>
+                <td >2.9%</td>
+                <td >2.6%</td>
+                <td >43.2</td>
+                <td >0.8</td>
+                <td >1.71</td>
+                <td >1.40</td>
+                <td >3.8</td>
+                <td >3.1</td>
+                <td >+3.4%</td>
+                <td >+4.6%</td>
+                <td >2026-10-06</td>
+                <td >11</td>
+                <td >0</td>
+                <td style="background-color: #e57373;">+1.09</td>
+                <td >1</td>
+                <td >42.7</td>
+                <td style="background-color: #ffcdd2;">+0.80</td>
+                <td >24.4</td>
+                <td >24.4</td>
+                <td >4</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
